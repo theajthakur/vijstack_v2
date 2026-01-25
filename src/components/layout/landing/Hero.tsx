@@ -5,7 +5,7 @@ import { RocketLaunchIcon, FaceSmileIcon, UsersIcon } from '@heroicons/react/24/
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-background pt-20">
+        <section className="relative w-full min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-backgroundp py-20 md:pt-30">
             <div className="container relative z-10 px-4 md:px-6 mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 {/* Text Content */}
                 <div className="flex flex-col space-y-8 text-center lg:text-left">
