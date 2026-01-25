@@ -23,3 +23,14 @@ model Newsletter {
   id    Int    @id @default(autoincrement())
   email String @unique
 }
+
+model Quote {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String
+  businessName String
+  projectType  String
+  message      String
+  phone        String
+  date         DateTime @default(now())
+}

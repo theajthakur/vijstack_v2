@@ -52,7 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Feedback: 'Feedback',
-  Newsletter: 'Newsletter'
+  Newsletter: 'Newsletter',
+  Quote: 'Quote'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -86,6 +87,20 @@ export const NewsletterScalarFieldEnum = {
 } as const
 
 export type NewsletterScalarFieldEnum = (typeof NewsletterScalarFieldEnum)[keyof typeof NewsletterScalarFieldEnum]
+
+
+export const QuoteScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  businessName: 'businessName',
+  projectType: 'projectType',
+  message: 'message',
+  phone: 'phone',
+  date: 'date'
+} as const
+
+export type QuoteScalarFieldEnum = (typeof QuoteScalarFieldEnum)[keyof typeof QuoteScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -10,4 +10,5 @@
  */
 export type * from './models/Feedback'
 export type * from './models/Newsletter'
+export type * from './models/Quote'
 export type * from './commonInputTypes'

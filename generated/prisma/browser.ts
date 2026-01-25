@@ -27,3 +27,8 @@ export type Feedback = Prisma.FeedbackModel
  * 
  */
 export type Newsletter = Prisma.NewsletterModel
+/**
+ * Model Quote
+ * 
+ */
+export type Quote = Prisma.QuoteModel
