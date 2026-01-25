@@ -9,18 +9,32 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.36.10",
+    "@heroicons/react": "^2.2.0",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "@supabase/auth-helpers-nextjs": "^0.15.0",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.91.0",
+    "dotenv": "^17.2.3",
+    "heroicons": "^2.2.0",
     "next": "16.1.4",
+    "pg": "^8.17.2",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.16.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
+    "prisma": "^7.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
