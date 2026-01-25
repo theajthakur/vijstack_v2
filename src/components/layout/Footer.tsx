@@ -8,10 +8,12 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                     {/* Brand Section */}
                     <div className="md:col-span-1 space-y-4">
-                        <Link href="/" className="flex items-center gap-2">
-                            <Image src="/logo.png" alt="Logo" width={50} height={50} />
-                        </Link>
-                        <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-foreground to-muted">Vijstack</h1>
+                        <div className='flex items-center gap-2'>
+                            <Link href="/" className="flex items-center gap-2">
+                                <Image src="/logo.png" alt="Logo" width={50} height={50} />
+                            </Link>
+                            <h1 className="text-2xl font-bold bg-clip-text text-foreground">Vijstack</h1>
+                        </div>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                             Building digital experiences that matter. Modern, minimal, and user-centric solutions for your business.
                         </p>
