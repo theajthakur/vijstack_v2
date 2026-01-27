@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function NotFound() {
     return (
-        <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-4 py-12 sm:px-6 lg:px-8">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background px-4 pb-12 sm:px-6 lg:px-8">
             <div className="relative w-full max-w-2xl px-4 text-center">
                 <div className="flex justify-center">
                     <Image

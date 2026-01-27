@@ -1,4 +1,4 @@
-import Services from '@/components/layout/services/Services'
+import Services from '@/components/services/Services'
 import { Metadata } from 'next'
 import React from 'react'
 

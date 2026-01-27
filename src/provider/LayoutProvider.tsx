@@ -8,7 +8,7 @@ export default function LayoutProvider({ children }: { children: React.ReactNode
         <div className='bg-background text-foreground'>
             <Navbar />
             <Toaster position='top-right' richColors />
-            {children}
+            <div className='py-20'>{children}</div>
             <Footer />
         </div>
     )

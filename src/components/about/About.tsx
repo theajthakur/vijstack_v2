@@ -12,17 +12,9 @@ import {
 export default function About() {
     return (
         <div className="w-full min-h-screen bg-background text-foreground overflow-hidden">
-            <div className="fixed inset-0 z-0 pointer-events-none">
-                <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px] opacity-70" />
-                <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-blue-500/5 rounded-full blur-[120px] opacity-70" />
-            </div>
-            <section className="relative z-10 py-16 md:py-24 lg:py-32 container px-4 mx-auto">
+            <section className="relative z-10 pb-16 md:pb-24 lg:pb-32 container px-4 mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div className="flex-1 text-center lg:text-left space-y-8">
-                        <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-md">
-                            <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                            Our Mission
-                        </div>
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
                             Crafting Digital <br className="hidden lg:block" /> Excellence
                         </h1>

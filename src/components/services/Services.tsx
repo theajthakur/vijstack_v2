@@ -71,13 +71,10 @@ export default function Services() {
     return (
         <div className="w-full min-h-screen bg-background overflow-hidden font-sans">
 
-            <section className="relative z-10 py-16 container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <section className="relative z-10 pb-16 container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* Text Content */}
                     <div className="flex-1 text-center lg:text-left space-y-8">
-                        <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-600 backdrop-blur-md">
-                            Our Expertise
-                        </div>
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
                             Reliable Digital Solutions for Growing Businesses
                         </h1>
@@ -113,7 +110,7 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {CoreServices.map((service, index) => (
-                        <div key={index} className="group relative rounded-3xl border border-border bg-card/50 p-1 hover:bg-linear-to-br hover:from-blue-500/10 hover:to-transparent transition-all duration-300">
+                        <div key={index} className="group relative rounded-3xl border border-border bg-card/50 p-1 hover:border-primary/20 transition-all duration-300">
                             <div className="h-full rounded-[20px] bg-background p-8 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 shadow-sm">
                                 <div className={`w-14 h-14 rounded-2xl ${service.bg} flex items-center justify-center mb-6 ${service.color}`}>
                                     <service.icon className="w-8 h-8" />
