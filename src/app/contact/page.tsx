@@ -1,14 +1,39 @@
 import Contact from '@/components/contact/Contact'
+import { JsonLd } from '@/components/seo/JsonLd';
 import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Contact Us | VijStack",
-    description: "Start your digital project with VijStack. We build modern websites, ecommerce platforms, and SaaS products. Get a clear, no-obligation quote today."
+    title: "Contact VijStack - Web Developer in Greater Noida & Delhi",
+    description: "Get a quote for your web development project. Contact VijStack in Greater Noida for ecommerce websites, SaaS development, and digital solutions.",
+    alternates: {
+        canonical: "https://vijstack.com/contact",
+    }
 }
 
 export default function page() {
+    const contactSchema = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact VijStack",
+        "url": "https://vijstack.com/contact",
+        "description": "Contact information for VijStack.",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "VijStack",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9876543210",
+                "contactType": "sales",
+                "areaServed": "IN"
+            }
+        }
+    };
+
     return (
-        <Contact />
+        <>
+            <JsonLd data={contactSchema} />
+            <Contact />
+        </>
     )
 }

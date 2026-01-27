@@ -53,6 +53,33 @@ const CoreServices = [
     }
 ];
 
+const SecondaryServices = [
+    {
+        title: "Website Maintenance",
+        description: "Keep your site secure, fast, and up-to-date with our comprehensive maintenance packages.",
+        icon: WrenchScrewdriverIcon,
+        bestFor: "Existing Websites",
+        color: "text-gray-500",
+        bg: "bg-gray-500/10"
+    },
+    {
+        title: "SEO Optimization",
+        description: "Improve your rankings and drive organic traffic with technical and content-focused SEO strategies.",
+        icon: ArrowPathIcon,
+        bestFor: "Growth Focused Businesses",
+        color: "text-green-600",
+        bg: "bg-green-600/10"
+    },
+    {
+        title: "UI/UX Design",
+        description: "Create intuitive and beautiful user interfaces that delight users and boost retention.",
+        icon: PaintBrushIcon,
+        bestFor: "Products & Apps",
+        color: "text-pink-500",
+        bg: "bg-pink-500/10"
+    }
+];
+
 import { ServiceCard } from './_components/ServiceCard';
 
 export default function Services() {
@@ -114,6 +141,14 @@ export default function Services() {
                         <p className="text-muted-foreground max-w-2xl mx-auto">
                             Ensure your digital presence remains sharp, secure, and effective.
                         </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {SecondaryServices.map((service, index) => (
+                            <div key={index} className="h-full">
+                                <ServiceCard {...service} />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
