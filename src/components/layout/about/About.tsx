@@ -69,7 +69,7 @@ export default function About() {
                                     { text: "Earn long-term trust through clarity, quality, and reliability", title: "Trust & Transparency" }
                                 ].map((item, idx) => (
                                     <div key={idx} className="flex gap-4">
-                                        <div className="flex-shrink-0 mt-1">
+                                        <div className="shrink-0 mt-1">
                                             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                                                 <CheckCircleIcon className="w-6 h-6" />
                                             </div>

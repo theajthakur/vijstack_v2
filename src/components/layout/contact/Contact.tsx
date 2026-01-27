@@ -248,7 +248,7 @@ export default function Contact() {
                             <h3 className="text-lg font-semibold px-2">Why businesses trust us</h3>
                             {TRUST_SIGNALS.map((signal, idx) => (
                                 <div key={idx} className="flex gap-4 px-2">
-                                    <div className="flex-shrink-0 mt-1">
+                                    <div className="shrink-0 mt-1">
                                         <signal.icon className="w-6 h-6 text-primary" />
                                     </div>
                                     <div>
@@ -260,8 +260,8 @@ export default function Contact() {
                         </div>
 
                         {/* Guarantee Badge */}
-                        <div className="rounded-3xl bg-gradient-to-br from-primary/5 to-transparent p-6 border border-primary/10 flex items-center gap-4">
-                            <CheckBadgeIcon className="w-12 h-12 text-primary flex-shrink-0" />
+                        <div className="rounded-3xl bg-linear-gradient-to-br from-primary/5 to-transparent p-6 border border-primary/10 flex items-center gap-4">
+                            <CheckBadgeIcon className="w-12 h-12 text-primary shrink-0" />
                             <div>
                                 <p className="font-bold text-foreground">100% Satisfaction Focus</p>
                                 <p className="text-sm text-muted-foreground">We don't just deliver code. We deliver results that help you grow.</p>

@@ -113,7 +113,7 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {CoreServices.map((service, index) => (
-                        <div key={index} className="group relative rounded-3xl border border-border bg-card/50 p-1 hover:bg-gradient-to-br hover:from-blue-500/10 hover:to-transparent transition-all duration-300">
+                        <div key={index} className="group relative rounded-3xl border border-border bg-card/50 p-1 hover:bg-linear-to-br hover:from-blue-500/10 hover:to-transparent transition-all duration-300">
                             <div className="h-full rounded-[20px] bg-background p-8 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 shadow-sm">
                                 <div className={`w-14 h-14 rounded-2xl ${service.bg} flex items-center justify-center mb-6 ${service.color}`}>
                                     <service.icon className="w-8 h-8" />
