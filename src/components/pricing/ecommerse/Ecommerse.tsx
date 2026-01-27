@@ -21,7 +21,7 @@ export default function Ecommerse() {
     <div className="w-full font-sans">
       <HeroSection
         title={<>Ecommerce Solutions <br className="hidden sm:block" /> That <span className="text-primary">Drive Growth</span></>}
-        subtitle="Digital Transformation"
+
         description="We build high-performance, scalable online stores designed to convert visitors into loyal customers. Secure, fast, and tailored to your brand."
         primaryCta={{ text: "Start Your Store", href: "/contact" }}
         secondaryCta={{ text: "View Portfolio", href: "/work" }}
@@ -110,7 +110,7 @@ export default function Ecommerse() {
         plans={[
           {
             name: "Starter",
-            price: "$1,499",
+            price: "₹50,000",
             description: "Perfect for small businesses starting their online journey.",
             features: ["Custom Design", "Up to 50 Products", "Mobile Responsive", "Payment Integration", "Basic SEO Setup"],
             ctaText: "Get Started",
@@ -118,7 +118,7 @@ export default function Ecommerse() {
           },
           {
             name: "Growth",
-            price: "$2,999",
+            price: "₹1,00,000",
             description: "For established brands looking to scale their operations.",
             features: ["Advanced Customization", "Unlimited Products", "Blog Integration", "Advanced Analytics", "Email Marketing Setup", "Priority Support"],
             ctaText: "Choose Growth",

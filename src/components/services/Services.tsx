@@ -29,7 +29,11 @@ const CoreServices = [
         icon: ShoppingCartIcon,
         bestFor: "Retailers, Digital Brands",
         color: "text-emerald-500",
-        bg: "bg-emerald-500/10"
+        bg: "bg-emerald-500/10",
+        cta: {
+            text: "Explore Ecommerce",
+            href: "/services/ecommerce"
+        }
     },
     {
         title: "SaaS & MVP Development",
@@ -49,23 +53,7 @@ const CoreServices = [
     }
 ];
 
-const SecondaryServices = [
-    {
-        title: "UI/UX Design",
-        description: "User-centric interfaces that are intuitive and visually appealing.",
-        icon: PaintBrushIcon
-    },
-    {
-        title: "Revamp & Optimization",
-        description: "Modernizing legacy sites for better performance and fresh aesthetics.",
-        icon: ArrowPathIcon
-    },
-    {
-        title: "Maintenance & Support",
-        description: "Ongoing security updates, backups, and technical assistance.",
-        icon: WrenchScrewdriverIcon
-    }
-];
+import { ServiceCard } from './_components/ServiceCard';
 
 export default function Services() {
     return (
@@ -110,28 +98,13 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {CoreServices.map((service, index) => (
-                        <div key={index} className="group relative rounded-3xl border border-border bg-card/50 p-1 hover:border-primary/20 transition-all duration-300">
-                            <div className="h-full rounded-[20px] bg-background p-8 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 shadow-sm">
-                                <div className={`w-14 h-14 rounded-2xl ${service.bg} flex items-center justify-center mb-6 ${service.color}`}>
-                                    <service.icon className="w-8 h-8" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-3 text-foreground">{service.title}</h3>
-                                <p className="text-muted-foreground mb-6 leading-relaxed">
-                                    {service.description}
-                                </p>
-                                <div className="pt-6 border-t border-border flex items-center justify-between">
-                                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                                        Best For
-                                    </span>
-                                    <span className="text-sm font-medium text-foreground">
-                                        {service.bestFor}
-                                    </span>
-                                </div>
-                            </div>
+                        <div key={index} className="h-full">
+                            <ServiceCard {...service} />
                         </div>
                     ))}
                 </div>
             </section>
+
 
             {/* Secondary Services */}
             <section className="relative z-10 py-24 bg-muted/30 border-y border-border/50">
@@ -141,20 +114,6 @@ export default function Services() {
                         <p className="text-muted-foreground max-w-2xl mx-auto">
                             Ensure your digital presence remains sharp, secure, and effective.
                         </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {SecondaryServices.map((service, index) => (
-                            <div key={index} className="flex flex-col items-center text-center p-8 rounded-2xl border border-border bg-background hover:border-blue-500/30 transition-colors">
-                                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-6 text-foreground">
-                                    <service.icon className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-lg font-bold mb-3">{service.title}</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    {service.description}
-                                </p>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
