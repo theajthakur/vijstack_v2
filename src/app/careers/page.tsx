@@ -1,0 +1,50 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+
+export default function CareersPage() {
+    return (
+        <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-4 py-12 sm:px-6 lg:px-8">
+            {/* Premium Background Pattern */}
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"></div>
+            </div>
+
+            <div className="relative w-full max-w-2xl px-4 text-center">
+                {/* Image Container with subtle float animation */}
+                <div className="flex justify-center">
+                    <div>
+                        <Image
+                            src="/illustrations/full_hiring.png"
+                            alt="No Vacancies"
+                            width={400}
+                            height={400}
+                            className="h-auto w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]"
+                            priority
+                        />
+                    </div>
+                </div>
+                <div className="">
+                    <div className="space-y-3">
+                        <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+                            Our team is currently <span className="text-primary">at full capacity</span>
+                        </h1>
+                        <p className="mx-auto max-w-xl text-base text-muted-foreground sm:text-lg md:text-xl leading-relaxed">
+                            We're thrilled by the interest in VijStack! While we don't have open positions right now, we're always growing. Check back soon for future opportunities.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-col items-center justify-center pt-6">
+                        <Link
+                            href="/"
+                            className="group inline-flex items-center justify-center rounded-full border border-input bg-card px-8 py-3 font-medium text-foreground shadow-sm transition-all duration-300 hover:border-primary/20 hover:bg-secondary/50 hover:text-primary hover:-translate-y-0.5"
+                        >
+                            <ArrowLeftIcon className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
+                            Back to Home
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

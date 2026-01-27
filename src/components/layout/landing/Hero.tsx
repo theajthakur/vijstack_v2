@@ -75,11 +75,9 @@ export default function Hero() {
                 </div>
 
                 {/* Visual Content (Dashboard Mockup / Abstract) */}
-                <div className="relative hidden lg:block perspective-1000">
+                <div className="relative hidden lg:block">
                     <div className="relative w-full aspect-square max-w-lg mx-auto transform rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out">
-                        {/* Abstract Glass Card 1 */}
                         <div className="absolute inset-0 bg-linear-to-tr from-background/40 to-background/10 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl z-10 flex flex-col p-6">
-                            {/* Mock Dashboard UI */}
                             <div className="flex justify-between items-center mb-8 border-b border-border/10 pb-4">
                                 <div className="h-4 w-24 bg-foreground/20 rounded-full"></div>
                                 <div className="flex gap-2">

@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
     CheckCircleIcon,
@@ -12,38 +12,45 @@ import {
 export default function About() {
     return (
         <div className="w-full min-h-screen bg-background text-foreground overflow-hidden">
-            {/* Background Elements */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px] opacity-70" />
                 <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-blue-500/5 rounded-full blur-[120px] opacity-70" />
             </div>
+            <section className="relative z-10 py-16 md:py-24 lg:py-32 container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <div className="flex-1 text-center lg:text-left space-y-8">
+                        <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-md">
+                            <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+                            Our Mission
+                        </div>
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+                            Crafting Digital <br className="hidden lg:block" /> Excellence
+                        </h1>
+                        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
+                            Helping businesses build a strong, reliable online presence through clean design, solid development, and a clear delivery process.
+                        </p>
 
-            {/* Hero Section */}
-            <section className="relative z-10 py-24 md:py-32 lg:py-40">
-                <div className="container px-4 md:px-6 mx-auto text-center">
-                    <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-8 backdrop-blur-md">
-                        <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                        Our Mission
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                            <Link href="/contact" className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all flex items-center gap-2">
+                                Start a Project <ArrowRightIcon className="w-4 h-4" />
+                            </Link>
+                            <Link href="#niche" className="px-8 py-3 rounded-lg border border-border bg-background hover:bg-accent hover:text-accent-foreground font-medium transition-all">
+                                Explore Services
+                            </Link>
+                        </div>
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-                        Crafting Digital <br className="hidden md:block" /> Excellence
-                    </h1>
-                    <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-                        Helping businesses build a strong, reliable online presence through clean design, solid development, and a clear delivery process.
-                    </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Link href="/contact" className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all flex items-center gap-2">
-                            Start a Project <ArrowRightIcon className="w-4 h-4" />
-                        </Link>
-                        <Link href="#niche" className="px-8 py-3 rounded-lg border border-border bg-background hover:bg-accent hover:text-accent-foreground font-medium transition-all">
-                            Explore Services
-                        </Link>
+                    <div className="flex-1 w-full flex justify-center lg:justify-end">
+                        <Image
+                            src="/illustrations/relaxed.png"
+                            alt="Relaxed Working"
+                            width={500}
+                            height={400}
+                        />
                     </div>
                 </div>
             </section>
 
-            {/* Aims Section */}
             <section className="relative z-10 py-20 bg-muted/30 border-y border-border/50">
                 <div className="container px-4 md:px-6 mx-auto">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -77,18 +84,7 @@ export default function About() {
                         </div>
 
                         <div className="w-full lg:w-1/2 relative">
-                            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-border/50 shadow-2xl skew-y-1">
-                                <div className="absolute inset-0 bg-grid-white/5" />
-                                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                                    <div className="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 backdrop-blur-xl border border-primary/20">
-                                        <SparklesIcon className="w-10 h-10 text-primary" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white mb-2">Growth Partner</h3>
-                                    <p className="text-zinc-400 max-w-sm">
-                                        We don't just build websites; we build engines for your business growth.
-                                    </p>
-                                </div>
-                            </div>
+                            <Image src="/illustrations/webpages.png" alt="Webpages" width={600} height={400} />
                         </div>
                     </div>
                 </div>

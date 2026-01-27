@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
     ComputerDesktopIcon,
@@ -69,23 +70,36 @@ const SecondaryServices = [
 export default function Services() {
     return (
         <div className="w-full min-h-screen bg-background overflow-hidden font-sans">
-            {/* Background Ambience */}
-            <div className="fixed inset-0 z-0 pointer-events-none">
-                <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] opacity-60" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] opacity-60" />
-            </div>
 
-            {/* Hero Section */}
-            <section className="relative z-10 py-24 md:py-32 container px-4 mx-auto text-center">
-                <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-600 mb-8 backdrop-blur-md">
-                    Our Expertise
+            <section className="relative z-10 py-16 container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    {/* Text Content */}
+                    <div className="flex-1 text-center lg:text-left space-y-8">
+                        <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-600 backdrop-blur-md">
+                            Our Expertise
+                        </div>
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+                            Reliable Digital Solutions for Growing Businesses
+                        </h1>
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            We translate business goals into clear, functional digital products. No fluff, just results.
+                        </p>
+                    </div>
+
+                    {/* Hero Image */}
+                    <div className="flex-1 w-full flex justify-center lg:justify-end">
+                        <div className="relative w-full max-w-lg lg:max-w-xl">
+                            <Image
+                                src="/illustrations/services.png"
+                                alt="VijStack Services"
+                                width={800}
+                                height={600}
+                                priority
+                                className="h-auto w-full object-contain"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                    Reliable Digital Solutions <br className="hidden md:block" /> for Growing Businesses
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-                    We translate business goals into clear, functional digital products. No fluff, just results.
-                </p>
             </section>
 
             {/* Core Services */}
