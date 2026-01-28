@@ -23,7 +23,7 @@ export default function page() {
             "name": "VijStack",
             "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-9876543210",
+                "telephone": "+91-9695146906",
                 "contactType": "sales",
                 "areaServed": "IN"
             }

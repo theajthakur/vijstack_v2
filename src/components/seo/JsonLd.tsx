@@ -27,7 +27,7 @@ export const OrganizationSchema = {
     ],
     "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-9876543210", // Replace with actual
+        "telephone": "+91-9695146906", // Replace with actual
         "contactType": "customer service",
         "areaServed": ["IN", "US", "UK"],
         "availableLanguage": ["en", "hi"]
@@ -39,7 +39,7 @@ export const LocalBusinessSchema = {
     "@type": "LocalBusiness",
     "name": "VijStack",
     "image": "https://vijstack.com/office.jpg",
-    "telephone": "+91-9876543210", // Replace with actual
+    "telephone": "+91-9695146906", // Replace with actual
     "email": "contact@vijstack.com",
     "address": {
         "@type": "PostalAddress",
