@@ -146,8 +146,7 @@ export default function PrivacyPolicyPage() {
                         <PrivacySection title="11. Contact Us">
                             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
                             <div className="mt-2">
-                                <a href="mailto:contact@vijstack.com" className="text-primary hover:underline block">contact@vijstack.com</a>
-                                <a href="mailto:privacy@vijstack.com" className="text-primary hover:underline block">privacy@vijstack.com</a>
+                                <a href="mailto:vijstack@gmail.com" className="text-primary hover:underline block">vijstack@gmail.com</a>
                             </div>
                         </PrivacySection>
 

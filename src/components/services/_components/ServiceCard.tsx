@@ -23,7 +23,7 @@ export function ServiceCard({ title, description, icon: Icon, bestFor, color, bg
                     <Icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-foreground">{title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
+                <p className="text-muted-foreground mb-6 leading-relaxed grow">
                     {description}
                 </p>
 

@@ -40,7 +40,7 @@ export const LocalBusinessSchema = {
     "name": "VijStack",
     "image": "https://vijstack.com/office.jpg",
     "telephone": "+91-9695146906", // Replace with actual
-    "email": "contact@vijstack.com",
+    "email": "vijstack@gmail.com",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Greater Noida", // Enhance with full address
