@@ -7,7 +7,7 @@ export type ContactFormData = {
     name: string;
     email: string;
     phone: string;
-    businessName: string;
+    businessName?: string;
     projectType: string;
     message: string;
 };

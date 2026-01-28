@@ -28,7 +28,7 @@ model Quote {
   id           Int      @id @default(autoincrement())
   name         String
   email        String
-  businessName String
+  businessName String?
   projectType  String
   message      String
   phone        String

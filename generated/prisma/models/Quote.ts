@@ -201,7 +201,7 @@ export type QuoteGroupByOutputType = {
   id: number
   name: string
   email: string
-  businessName: string
+  businessName: string | null
   projectType: string
   message: string
   phone: string
@@ -235,7 +235,7 @@ export type QuoteWhereInput = {
   id?: Prisma.IntFilter<"Quote"> | number
   name?: Prisma.StringFilter<"Quote"> | string
   email?: Prisma.StringFilter<"Quote"> | string
-  businessName?: Prisma.StringFilter<"Quote"> | string
+  businessName?: Prisma.StringNullableFilter<"Quote"> | string | null
   projectType?: Prisma.StringFilter<"Quote"> | string
   message?: Prisma.StringFilter<"Quote"> | string
   phone?: Prisma.StringFilter<"Quote"> | string
@@ -246,7 +246,7 @@ export type QuoteOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  businessName?: Prisma.SortOrder
+  businessName?: Prisma.SortOrderInput | Prisma.SortOrder
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
@@ -260,7 +260,7 @@ export type QuoteWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.QuoteWhereInput | Prisma.QuoteWhereInput[]
   name?: Prisma.StringFilter<"Quote"> | string
   email?: Prisma.StringFilter<"Quote"> | string
-  businessName?: Prisma.StringFilter<"Quote"> | string
+  businessName?: Prisma.StringNullableFilter<"Quote"> | string | null
   projectType?: Prisma.StringFilter<"Quote"> | string
   message?: Prisma.StringFilter<"Quote"> | string
   phone?: Prisma.StringFilter<"Quote"> | string
@@ -271,7 +271,7 @@ export type QuoteOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  businessName?: Prisma.SortOrder
+  businessName?: Prisma.SortOrderInput | Prisma.SortOrder
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
@@ -290,7 +290,7 @@ export type QuoteScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Quote"> | number
   name?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   email?: Prisma.StringWithAggregatesFilter<"Quote"> | string
-  businessName?: Prisma.StringWithAggregatesFilter<"Quote"> | string
+  businessName?: Prisma.StringNullableWithAggregatesFilter<"Quote"> | string | null
   projectType?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   message?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   phone?: Prisma.StringWithAggregatesFilter<"Quote"> | string
@@ -300,7 +300,7 @@ export type QuoteScalarWhereWithAggregatesInput = {
 export type QuoteCreateInput = {
   name: string
   email: string
-  businessName: string
+  businessName?: string | null
   projectType: string
   message: string
   phone: string
@@ -311,7 +311,7 @@ export type QuoteUncheckedCreateInput = {
   id?: number
   name: string
   email: string
-  businessName: string
+  businessName?: string | null
   projectType: string
   message: string
   phone: string
@@ -321,7 +321,7 @@ export type QuoteUncheckedCreateInput = {
 export type QuoteUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  businessName?: Prisma.StringFieldUpdateOperationsInput | string
+  businessName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
@@ -332,7 +332,7 @@ export type QuoteUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  businessName?: Prisma.StringFieldUpdateOperationsInput | string
+  businessName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
@@ -343,7 +343,7 @@ export type QuoteCreateManyInput = {
   id?: number
   name: string
   email: string
-  businessName: string
+  businessName?: string | null
   projectType: string
   message: string
   phone: string
@@ -353,7 +353,7 @@ export type QuoteCreateManyInput = {
 export type QuoteUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  businessName?: Prisma.StringFieldUpdateOperationsInput | string
+  businessName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
@@ -364,7 +364,7 @@ export type QuoteUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  businessName?: Prisma.StringFieldUpdateOperationsInput | string
+  businessName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
@@ -471,7 +471,7 @@ export type $QuotePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     id: number
     name: string
     email: string
-    businessName: string
+    businessName: string | null
     projectType: string
     message: string
     phone: string

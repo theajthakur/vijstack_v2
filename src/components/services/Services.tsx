@@ -72,7 +72,7 @@ const SecondaryServices = [
     },
     {
         title: "UI/UX Design",
-        description: "Create intuitive and beautiful user interfaces that delight users and boost retention.",
+        description: "Create intuitive and beautiful user interfaces that delight users and boost .",
         icon: PaintBrushIcon,
         bestFor: "Products & Apps",
         color: "text-pink-500",

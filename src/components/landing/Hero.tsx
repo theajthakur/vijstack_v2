@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import { RocketLaunchIcon, FaceSmileIcon, UsersIcon } from '@heroicons/react/24/outline';
+import StatCard from './_components/StatCard';
+import { Rocket, SmileIcon, User } from 'lucide-react';
 
 export default function Hero() {
     return (
@@ -38,38 +40,17 @@ export default function Hero() {
                     <div className="pt-8 w-full">
                         <div className="text-sm font-semibold text-muted-foreground mb-4 text-center lg:text-left">Trusted by Industry Leaders</div>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {/* Stat Card 1 */}
-                            <div className="bg-white/60 backdrop-blur-md border border-slate-200 p-4 rounded-xl shadow-xs hover:shadow-md transition-all duration-300 flex items-center gap-4 group">
-                                <div className="p-2.5 bg-blue-500/10 text-blue-600 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                                    <UsersIcon className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-2xl font-bold text-foreground">80%</div>
-                                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Retention</div>
-                                </div>
-                            </div>
-
-                            {/* Stat Card 2 */}
-                            <div className="bg-white/60 backdrop-blur-md border border-slate-200 p-4 rounded-xl shadow-xs hover:shadow-md transition-all duration-300 flex items-center gap-4 group">
-                                <div className="p-2.5 bg-green-500/10 text-green-600 rounded-lg group-hover:bg-green-500/20 transition-colors">
-                                    <FaceSmileIcon className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-2xl font-bold text-foreground">100%</div>
-                                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Satisfaction</div>
-                                </div>
-                            </div>
-
-                            {/* Stat Card 3 */}
-                            <div className="bg-white/60 backdrop-blur-md border border-slate-200 p-4 rounded-xl shadow-xs hover:shadow-md transition-all duration-300 flex items-center gap-4 group">
-                                <div className="p-2.5 bg-purple-500/10 text-purple-600 rounded-lg group-hover:bg-purple-500/20 transition-colors">
-                                    <RocketLaunchIcon className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-2xl font-bold text-foreground">20+</div>
-                                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Projects</div>
-                                </div>
-                            </div>
+                            {
+                                [
+                                    { icon: User, title: "80%", subtitle: "Retention", color: "blue" },
+                                    { icon: SmileIcon, title: "100%", subtitle: "Satisfaction", color: "green" },
+                                    { icon: Rocket, title: "20+", subtitle: "Projects", color: "purple" }
+                                ].map((item, index) => {
+                                    return (
+                                        <StatCard key={index} Icon={item.icon} title={item.title} subtitle={item.subtitle} color={item.color} />
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>

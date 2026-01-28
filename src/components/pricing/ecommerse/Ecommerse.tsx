@@ -110,28 +110,62 @@ export default function Ecommerse() {
         plans={[
           {
             name: "Starter",
-            price: "₹50,000",
-            description: "Perfect for small businesses starting their online journey.",
-            features: ["Custom Design", "Up to 50 Products", "Mobile Responsive", "Payment Integration", "Basic SEO Setup"],
+            price: "₹79,000",
+            description: "Ideal for small businesses launching their first online store or MVP.",
+            features: [
+              "Next.js Frontend",
+              "Product Listing & Detail Pages",
+              "Cart & Checkout System",
+              "Razorpay Payment Integration",
+              "Order Tracking (Placed → In Transit → Delivered)",
+              "Admin Panel to Add/Edit Products",
+              "Manual Order Status Updates",
+              "Supabase Authentication",
+              "Cloudinary / AWS S3 Image Storage"
+            ],
             ctaText: "Get Started",
-            ctaLink: "/contact"
+            ctaLink: "/contact?plan=starter&service=ecommerce"
           },
           {
-            name: "Growth",
-            price: "₹1,00,000",
-            description: "For established brands looking to scale their operations.",
-            features: ["Advanced Customization", "Unlimited Products", "Blog Integration", "Advanced Analytics", "Email Marketing Setup", "Priority Support"],
-            ctaText: "Choose Growth",
-            ctaLink: "/contact",
+            name: "Professional",
+            price: "₹3,00,000",
+            description: "Best for growing brands that need scalability, user management, and admin control.",
+            features: [
+              "React or Next.js Frontend",
+              "Node.js + Express Backend (MVC Architecture)",
+              "Secure JWT Authentication",
+              "Role-Based Access (Admin / User)",
+              "User Profiles & Address Management",
+              "Product Catalog & Categories",
+              "Cart & Checkout System",
+              "Order History & Tracking",
+              "Admin Dashboard (Products, Users, Orders)",
+              "Secure Role-Based APIs",
+              "Cloudinary / AWS S3 Image Storage"
+            ],
+            ctaText: "Choose Professional",
+            ctaLink: "/contact?plan=professional&service=ecommerce",
             popular: true
           },
           {
             name: "Enterprise",
-            price: "Custom",
-            description: "Tailored solutions for high-volume retailers.",
-            features: ["Full Custom Development", "ERP/CRM Integration", "Multi-Vendor Setup", "Headless Commerce", "Dedicated Account Manager"],
-            ctaText: "Contact Us",
-            ctaLink: "/contact"
+            price: "₹10,00,000+",
+            description: "Custom-built enterprise-grade e-commerce solutions for high-traffic and large-scale platforms.",
+            features: [
+              "Next.js Frontend",
+              "NestJS Backend (Enterprise Architecture)",
+              "PostgreSQL Database with Redis Caching",
+              "Background Jobs with BullMQ / RabbitMQ",
+              "Auto-Scaling Cloud Infrastructure (AWS / GCP)",
+              "Shipping API Integration (Shiprocket, Delhivery, etc.)",
+              "Real-Time Order Tracking via Webhooks",
+              "Sales & User Analytics Dashboard",
+              "Automated Email Notifications",
+              "Advanced Security & Rate Limiting",
+              "Microservices-Ready Architecture"
+            ],
+            ctaText: "Contact Sales",
+            ctaLink: "/contact?plan=enterprise&service=ecommerce"
           }
         ]}
       />
