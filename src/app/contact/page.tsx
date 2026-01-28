@@ -33,7 +33,9 @@ export default function page() {
     return (
         <>
             <JsonLd data={contactSchema} />
-            <Contact />
+            <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+                <Contact />
+            </React.Suspense>
         </>
     )
 }

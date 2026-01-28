@@ -83,7 +83,7 @@ export default function Contact() {
     const [queryService] = useQueryState("service")
     const [queryPlan] = useQueryState("plan")
 
-    const refinedPlan = queryPlan ? ["starter", "growth", "enterprise"].includes(queryPlan.toLowerCase()) ? queryPlan.toLowerCase() : "starter" : "starter"
+    const refinedPlan = queryPlan ? ["starter", "professional", "enterprise"].includes(queryPlan.toLowerCase()) ? queryPlan.toLowerCase() : "starter" : "starter"
     const messageTemplate = `I’m interested in your ${queryService} service under the ${refinedPlan} plan.
 
 My requirement:
