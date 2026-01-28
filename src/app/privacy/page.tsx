@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import PrivacySection from './_components/PrivacySection'
@@ -16,6 +17,15 @@ export default function PrivacyPolicyPage() {
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Your privacy is important to us. This policy explains how Vijstack collects, uses, and protects your information.
                     </p>
+                </div>
+
+                <div className="w-full relative mb-8 flex justify-center">
+                    <Image
+                        src="/illustrations/privacy.png"
+                        alt="Privacy Illustration"
+                        width={400}
+                        height={400}
+                    />
                 </div>
 
                 <Card className="border-border/50 shadow-sm">

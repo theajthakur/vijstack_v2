@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import PrivacySection from '../privacy/_components/PrivacySection'
@@ -16,6 +17,15 @@ export default function TermsPage() {
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Please read these terms carefully before using our website.
                     </p>
+                </div>
+
+                <div className="w-full relative mb-8 flex justify-center">
+                    <Image
+                        src="/illustrations/terms.png"
+                        alt="Terms Illustration"
+                        width={400}
+                        height={400}
+                    />
                 </div>
 
                 <Card className="border-border/50 shadow-sm">
