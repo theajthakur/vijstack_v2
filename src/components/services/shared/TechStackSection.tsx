@@ -18,7 +18,7 @@ interface TechStackSectionProps {
 
 export function TechStackSection({ title, description, technologies }: TechStackSectionProps) {
     return (
-        <section className="py-20 px-4 container mx-auto text-center overflow-hidden">
+        <section className="px-4 container mx-auto text-center overflow-hidden">
 
             {/* Inject CSS for linear continuous scroll */}
             <style jsx global>{`

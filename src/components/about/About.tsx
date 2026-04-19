@@ -43,7 +43,7 @@ export default function About() {
                 </div>
             </section>
 
-            <section className="relative z-10 py-20 bg-muted/30 border-y border-border/50">
+            <section className="relative z-10 bg-muted/30 border-y border-border/50">
                 <div className="container px-4 md:px-6 mx-auto">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="w-full lg:w-1/2 space-y-8">

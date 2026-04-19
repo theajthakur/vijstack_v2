@@ -7,10 +7,10 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app'
 export default function LayoutProvider({ children }: { children: React.ReactNode }) {
     return (
         <NuqsAdapter>
-            <div className='bg-background text-foreground'>
+            <div className='bg-background text-foreground sm:px-6 md:px-10 lg:px-20'>
                 <Navbar />
                 <Toaster position='top-right' richColors />
-                <div className='py-20'>{children}</div>
+                <div>{children}</div>
                 <Footer />
             </div>
         </NuqsAdapter>

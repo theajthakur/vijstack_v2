@@ -7,14 +7,8 @@ import Testimonials from './Testinomials'
 
 export default function Landing() {
     return (
-        <div className="overflow-hidden">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                <Hero />
-            </motion.div>
+        <div>
+            <Hero />
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}

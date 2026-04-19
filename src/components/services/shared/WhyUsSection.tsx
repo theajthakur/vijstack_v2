@@ -16,7 +16,7 @@ interface WhyUsSectionProps {
 
 export function WhyUsSection({ title, description, reasons, illustration }: WhyUsSectionProps) {
     return (
-        <section className="py-20 px-4 container mx-auto">
+        <section className="px-4 container mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{title}</h2>

@@ -144,10 +144,10 @@ Thank you.
             </section>
 
             <div className="container px-4 mx-auto pb-24 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                     {/* Contact Form Section */}
-                    <div className="lg:col-span-7">
+                    <div className="lg:col-span-7 sticky top-28 self-start">
                         <div className="bg-card border border-border rounded-3xl p-6 md:p-10 shadow-sm">
                             <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
                             <Form {...form}>
