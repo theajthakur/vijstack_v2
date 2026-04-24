@@ -172,28 +172,32 @@
 
   --radius-3xl: calc(var(--radius) + 12px);
 
-  --radius-4xl: calc(var(--radius) + 16px)
-;
+  --radius-4xl: calc(var(--radius) + 16px);
 
   --animate-marquee: marquee var(--duration) infinite linear;
 
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
+
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
-  }}
+  }
+}
 
 body {
   font-family: Inter, Helvetica, sans-serif;
@@ -246,4 +250,8 @@ body {
 ::selection {
   background-color: var(--color-primary-900);
   color: var(--color-primary-100);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
