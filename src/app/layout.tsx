@@ -87,7 +87,9 @@ export default function RootLayout({
         className={`${inter.variable} antialiased`}
       >
         <LayoutProvider>
-          {children}
+          <div className="pt-10">
+            {children}
+          </div>
         </LayoutProvider>
       </body>
     </html>

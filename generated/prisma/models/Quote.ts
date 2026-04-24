@@ -42,7 +42,7 @@ export type QuoteMinAggregateOutputType = {
   projectType: string | null
   message: string | null
   phone: string | null
-  date: Date | null
+  date_created: Date | null
 }
 
 export type QuoteMaxAggregateOutputType = {
@@ -53,7 +53,7 @@ export type QuoteMaxAggregateOutputType = {
   projectType: string | null
   message: string | null
   phone: string | null
-  date: Date | null
+  date_created: Date | null
 }
 
 export type QuoteCountAggregateOutputType = {
@@ -64,7 +64,7 @@ export type QuoteCountAggregateOutputType = {
   projectType: number
   message: number
   phone: number
-  date: number
+  date_created: number
   _all: number
 }
 
@@ -85,7 +85,7 @@ export type QuoteMinAggregateInputType = {
   projectType?: true
   message?: true
   phone?: true
-  date?: true
+  date_created?: true
 }
 
 export type QuoteMaxAggregateInputType = {
@@ -96,7 +96,7 @@ export type QuoteMaxAggregateInputType = {
   projectType?: true
   message?: true
   phone?: true
-  date?: true
+  date_created?: true
 }
 
 export type QuoteCountAggregateInputType = {
@@ -107,7 +107,7 @@ export type QuoteCountAggregateInputType = {
   projectType?: true
   message?: true
   phone?: true
-  date?: true
+  date_created?: true
   _all?: true
 }
 
@@ -205,7 +205,7 @@ export type QuoteGroupByOutputType = {
   projectType: string
   message: string
   phone: string
-  date: Date
+  date_created: Date
   _count: QuoteCountAggregateOutputType | null
   _avg: QuoteAvgAggregateOutputType | null
   _sum: QuoteSumAggregateOutputType | null
@@ -239,7 +239,7 @@ export type QuoteWhereInput = {
   projectType?: Prisma.StringFilter<"Quote"> | string
   message?: Prisma.StringFilter<"Quote"> | string
   phone?: Prisma.StringFilter<"Quote"> | string
-  date?: Prisma.DateTimeFilter<"Quote"> | Date | string
+  date_created?: Prisma.DateTimeFilter<"Quote"> | Date | string
 }
 
 export type QuoteOrderByWithRelationInput = {
@@ -250,7 +250,7 @@ export type QuoteOrderByWithRelationInput = {
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
-  date?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type QuoteWhereUniqueInput = Prisma.AtLeast<{
@@ -264,7 +264,7 @@ export type QuoteWhereUniqueInput = Prisma.AtLeast<{
   projectType?: Prisma.StringFilter<"Quote"> | string
   message?: Prisma.StringFilter<"Quote"> | string
   phone?: Prisma.StringFilter<"Quote"> | string
-  date?: Prisma.DateTimeFilter<"Quote"> | Date | string
+  date_created?: Prisma.DateTimeFilter<"Quote"> | Date | string
 }, "id">
 
 export type QuoteOrderByWithAggregationInput = {
@@ -275,7 +275,7 @@ export type QuoteOrderByWithAggregationInput = {
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
-  date?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
   _count?: Prisma.QuoteCountOrderByAggregateInput
   _avg?: Prisma.QuoteAvgOrderByAggregateInput
   _max?: Prisma.QuoteMaxOrderByAggregateInput
@@ -294,7 +294,7 @@ export type QuoteScalarWhereWithAggregatesInput = {
   projectType?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   message?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   phone?: Prisma.StringWithAggregatesFilter<"Quote"> | string
-  date?: Prisma.DateTimeWithAggregatesFilter<"Quote"> | Date | string
+  date_created?: Prisma.DateTimeWithAggregatesFilter<"Quote"> | Date | string
 }
 
 export type QuoteCreateInput = {
@@ -304,7 +304,7 @@ export type QuoteCreateInput = {
   projectType: string
   message: string
   phone: string
-  date?: Date | string
+  date_created?: Date | string
 }
 
 export type QuoteUncheckedCreateInput = {
@@ -315,7 +315,7 @@ export type QuoteUncheckedCreateInput = {
   projectType: string
   message: string
   phone: string
-  date?: Date | string
+  date_created?: Date | string
 }
 
 export type QuoteUpdateInput = {
@@ -325,7 +325,7 @@ export type QuoteUpdateInput = {
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type QuoteUncheckedUpdateInput = {
@@ -336,7 +336,7 @@ export type QuoteUncheckedUpdateInput = {
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type QuoteCreateManyInput = {
@@ -347,7 +347,7 @@ export type QuoteCreateManyInput = {
   projectType: string
   message: string
   phone: string
-  date?: Date | string
+  date_created?: Date | string
 }
 
 export type QuoteUpdateManyMutationInput = {
@@ -357,7 +357,7 @@ export type QuoteUpdateManyMutationInput = {
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type QuoteUncheckedUpdateManyInput = {
@@ -368,7 +368,7 @@ export type QuoteUncheckedUpdateManyInput = {
   projectType?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type QuoteCountOrderByAggregateInput = {
@@ -379,7 +379,7 @@ export type QuoteCountOrderByAggregateInput = {
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
-  date?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type QuoteAvgOrderByAggregateInput = {
@@ -394,7 +394,7 @@ export type QuoteMaxOrderByAggregateInput = {
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
-  date?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type QuoteMinOrderByAggregateInput = {
@@ -405,15 +405,11 @@ export type QuoteMinOrderByAggregateInput = {
   projectType?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
-  date?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type QuoteSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
 }
 
 
@@ -426,7 +422,7 @@ export type QuoteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   projectType?: boolean
   message?: boolean
   phone?: boolean
-  date?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["quote"]>
 
 export type QuoteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -437,7 +433,7 @@ export type QuoteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   projectType?: boolean
   message?: boolean
   phone?: boolean
-  date?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["quote"]>
 
 export type QuoteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -448,7 +444,7 @@ export type QuoteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   projectType?: boolean
   message?: boolean
   phone?: boolean
-  date?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["quote"]>
 
 export type QuoteSelectScalar = {
@@ -459,10 +455,10 @@ export type QuoteSelectScalar = {
   projectType?: boolean
   message?: boolean
   phone?: boolean
-  date?: boolean
+  date_created?: boolean
 }
 
-export type QuoteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "businessName" | "projectType" | "message" | "phone" | "date", ExtArgs["result"]["quote"]>
+export type QuoteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "businessName" | "projectType" | "message" | "phone" | "date_created", ExtArgs["result"]["quote"]>
 
 export type $QuotePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Quote"
@@ -475,7 +471,7 @@ export type $QuotePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     projectType: string
     message: string
     phone: string
-    date: Date
+    date_created: Date
   }, ExtArgs["result"]["quote"]>
   composites: {}
 }
@@ -906,7 +902,7 @@ export interface QuoteFieldRefs {
   readonly projectType: Prisma.FieldRef<"Quote", 'String'>
   readonly message: Prisma.FieldRef<"Quote", 'String'>
   readonly phone: Prisma.FieldRef<"Quote", 'String'>
-  readonly date: Prisma.FieldRef<"Quote", 'DateTime'>
+  readonly date_created: Prisma.FieldRef<"Quote", 'DateTime'>
 }
     
 

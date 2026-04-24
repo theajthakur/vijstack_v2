@@ -38,18 +38,21 @@ export type FeedbackMinAggregateOutputType = {
   id: number | null
   email: string | null
   name: string | null
+  date_created: Date | null
 }
 
 export type FeedbackMaxAggregateOutputType = {
   id: number | null
   email: string | null
   name: string | null
+  date_created: Date | null
 }
 
 export type FeedbackCountAggregateOutputType = {
   id: number
   email: number
   name: number
+  date_created: number
   _all: number
 }
 
@@ -66,18 +69,21 @@ export type FeedbackMinAggregateInputType = {
   id?: true
   email?: true
   name?: true
+  date_created?: true
 }
 
 export type FeedbackMaxAggregateInputType = {
   id?: true
   email?: true
   name?: true
+  date_created?: true
 }
 
 export type FeedbackCountAggregateInputType = {
   id?: true
   email?: true
   name?: true
+  date_created?: true
   _all?: true
 }
 
@@ -171,6 +177,7 @@ export type FeedbackGroupByOutputType = {
   id: number
   email: string
   name: string | null
+  date_created: Date
   _count: FeedbackCountAggregateOutputType | null
   _avg: FeedbackAvgAggregateOutputType | null
   _sum: FeedbackSumAggregateOutputType | null
@@ -200,12 +207,14 @@ export type FeedbackWhereInput = {
   id?: Prisma.IntFilter<"Feedback"> | number
   email?: Prisma.StringFilter<"Feedback"> | string
   name?: Prisma.StringNullableFilter<"Feedback"> | string | null
+  date_created?: Prisma.DateTimeFilter<"Feedback"> | Date | string
 }
 
 export type FeedbackOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type FeedbackWhereUniqueInput = Prisma.AtLeast<{
@@ -215,12 +224,14 @@ export type FeedbackWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.FeedbackWhereInput[]
   NOT?: Prisma.FeedbackWhereInput | Prisma.FeedbackWhereInput[]
   name?: Prisma.StringNullableFilter<"Feedback"> | string | null
+  date_created?: Prisma.DateTimeFilter<"Feedback"> | Date | string
 }, "id" | "email">
 
 export type FeedbackOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
+  date_created?: Prisma.SortOrder
   _count?: Prisma.FeedbackCountOrderByAggregateInput
   _avg?: Prisma.FeedbackAvgOrderByAggregateInput
   _max?: Prisma.FeedbackMaxOrderByAggregateInput
@@ -235,51 +246,60 @@ export type FeedbackScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Feedback"> | number
   email?: Prisma.StringWithAggregatesFilter<"Feedback"> | string
   name?: Prisma.StringNullableWithAggregatesFilter<"Feedback"> | string | null
+  date_created?: Prisma.DateTimeWithAggregatesFilter<"Feedback"> | Date | string
 }
 
 export type FeedbackCreateInput = {
   email: string
   name?: string | null
+  date_created?: Date | string
 }
 
 export type FeedbackUncheckedCreateInput = {
   id?: number
   email: string
   name?: string | null
+  date_created?: Date | string
 }
 
 export type FeedbackUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackCreateManyInput = {
   id?: number
   email: string
   name?: string | null
+  date_created?: Date | string
 }
 
 export type FeedbackUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type FeedbackAvgOrderByAggregateInput = {
@@ -290,12 +310,14 @@ export type FeedbackMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type FeedbackMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type FeedbackSumOrderByAggregateInput = {
@@ -308,6 +330,10 @@ export type StringFieldUpdateOperationsInput = {
 
 export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -324,27 +350,31 @@ export type FeedbackSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   id?: boolean
   email?: boolean
   name?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["feedback"]>
 
 export type FeedbackSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
   name?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["feedback"]>
 
 export type FeedbackSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
   name?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["feedback"]>
 
 export type FeedbackSelectScalar = {
   id?: boolean
   email?: boolean
   name?: boolean
+  date_created?: boolean
 }
 
-export type FeedbackOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name", ExtArgs["result"]["feedback"]>
+export type FeedbackOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name" | "date_created", ExtArgs["result"]["feedback"]>
 
 export type $FeedbackPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Feedback"
@@ -353,6 +383,7 @@ export type $FeedbackPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     id: number
     email: string
     name: string | null
+    date_created: Date
   }, ExtArgs["result"]["feedback"]>
   composites: {}
 }
@@ -779,6 +810,7 @@ export interface FeedbackFieldRefs {
   readonly id: Prisma.FieldRef<"Feedback", 'Int'>
   readonly email: Prisma.FieldRef<"Feedback", 'String'>
   readonly name: Prisma.FieldRef<"Feedback", 'String'>
+  readonly date_created: Prisma.FieldRef<"Feedback", 'DateTime'>
 }
     
 

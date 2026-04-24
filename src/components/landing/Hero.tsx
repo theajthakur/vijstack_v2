@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Rocket, SmileIcon, User } from 'lucide-react';
 import StatCard from './_components/StatCard';
+import { Button } from '@/components/ui/button';
 
 export default function Hero() {
     const [activeStatIndex, setActiveStatIndex] = useState(2);
@@ -19,29 +20,32 @@ export default function Hero() {
                     className="flex flex-col space-y-8 text-center lg:text-left"
                 >
                     <div className="space-y-4">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15]">
-                            Building Digital <br />
-                            <span className="text-primary italic">Experiences</span> That Matter
+                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.3] text-neutral-900">
+                            Fast. Reliable. <br />  <span className='text-primary-900'>Yes</span>, both.
                         </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Transforming ambitious ideas into powerful, scalable software solutions.
-                            Specialized in high-performance SaaS platforms, E-commerce, and Cloud infrastructure.
+                        <p className="text-lg md:text-xl text-neutral-700">
+                            We design, build, and ship production-ready web products without delays or drama.
                         </p>
+
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <Link
-                            href="/contact"
-                            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white bg-primary rounded-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/25 hover:shadow-primary/40 transform hover:-translate-y-1 active:scale-95"
+                        <Button
+                            asChild
+                            className='px-8 py-6'                        >
+                            <Link href="/contact">
+                                Start Project
+                            </Link>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="outline"
+                            className='px-8 py-6'
                         >
-                            Start Project
-                        </Link>
-                        <Link
-                            href="/work"
-                            className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-foreground bg-background border border-input rounded-xl hover:bg-muted/50 transition-all hover:shadow-md transform hover:-translate-y-1 active:scale-95"
-                        >
-                            View Our Work
-                        </Link>
+                            <Link href="/work">
+                                View Our Work
+                            </Link>
+                        </Button>
                     </div>
 
                     <div className="pt-8 w-full">
@@ -74,7 +78,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Visual Content (Logo with Premium Treatment) */}
-                <div className="sticky top-24 self-start flex items-center justify-center">
+                <div className="hidden sticky top-24 self-start lg:flex items-center justify-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}

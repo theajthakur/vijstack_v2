@@ -670,7 +670,8 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const FeedbackScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  name: 'name'
+  name: 'name',
+  date_created: 'date_created'
 } as const
 
 export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typeof FeedbackScalarFieldEnum]
@@ -678,7 +679,8 @@ export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typ
 
 export const NewsletterScalarFieldEnum = {
   id: 'id',
-  email: 'email'
+  email: 'email',
+  date_created: 'date_created'
 } as const
 
 export type NewsletterScalarFieldEnum = (typeof NewsletterScalarFieldEnum)[keyof typeof NewsletterScalarFieldEnum]
@@ -692,7 +694,7 @@ export const QuoteScalarFieldEnum = {
   projectType: 'projectType',
   message: 'message',
   phone: 'phone',
-  date: 'date'
+  date_created: 'date_created'
 } as const
 
 export type QuoteScalarFieldEnum = (typeof QuoteScalarFieldEnum)[keyof typeof QuoteScalarFieldEnum]

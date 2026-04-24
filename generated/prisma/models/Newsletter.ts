@@ -37,16 +37,19 @@ export type NewsletterSumAggregateOutputType = {
 export type NewsletterMinAggregateOutputType = {
   id: number | null
   email: string | null
+  date_created: Date | null
 }
 
 export type NewsletterMaxAggregateOutputType = {
   id: number | null
   email: string | null
+  date_created: Date | null
 }
 
 export type NewsletterCountAggregateOutputType = {
   id: number
   email: number
+  date_created: number
   _all: number
 }
 
@@ -62,16 +65,19 @@ export type NewsletterSumAggregateInputType = {
 export type NewsletterMinAggregateInputType = {
   id?: true
   email?: true
+  date_created?: true
 }
 
 export type NewsletterMaxAggregateInputType = {
   id?: true
   email?: true
+  date_created?: true
 }
 
 export type NewsletterCountAggregateInputType = {
   id?: true
   email?: true
+  date_created?: true
   _all?: true
 }
 
@@ -164,6 +170,7 @@ export type NewsletterGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
 export type NewsletterGroupByOutputType = {
   id: number
   email: string
+  date_created: Date
   _count: NewsletterCountAggregateOutputType | null
   _avg: NewsletterAvgAggregateOutputType | null
   _sum: NewsletterSumAggregateOutputType | null
@@ -192,11 +199,13 @@ export type NewsletterWhereInput = {
   NOT?: Prisma.NewsletterWhereInput | Prisma.NewsletterWhereInput[]
   id?: Prisma.IntFilter<"Newsletter"> | number
   email?: Prisma.StringFilter<"Newsletter"> | string
+  date_created?: Prisma.DateTimeFilter<"Newsletter"> | Date | string
 }
 
 export type NewsletterOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type NewsletterWhereUniqueInput = Prisma.AtLeast<{
@@ -205,11 +214,13 @@ export type NewsletterWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.NewsletterWhereInput | Prisma.NewsletterWhereInput[]
   OR?: Prisma.NewsletterWhereInput[]
   NOT?: Prisma.NewsletterWhereInput | Prisma.NewsletterWhereInput[]
+  date_created?: Prisma.DateTimeFilter<"Newsletter"> | Date | string
 }, "id" | "email">
 
 export type NewsletterOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
   _count?: Prisma.NewsletterCountOrderByAggregateInput
   _avg?: Prisma.NewsletterAvgOrderByAggregateInput
   _max?: Prisma.NewsletterMaxOrderByAggregateInput
@@ -223,43 +234,52 @@ export type NewsletterScalarWhereWithAggregatesInput = {
   NOT?: Prisma.NewsletterScalarWhereWithAggregatesInput | Prisma.NewsletterScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Newsletter"> | number
   email?: Prisma.StringWithAggregatesFilter<"Newsletter"> | string
+  date_created?: Prisma.DateTimeWithAggregatesFilter<"Newsletter"> | Date | string
 }
 
 export type NewsletterCreateInput = {
   email: string
+  date_created?: Date | string
 }
 
 export type NewsletterUncheckedCreateInput = {
   id?: number
   email: string
+  date_created?: Date | string
 }
 
 export type NewsletterUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type NewsletterUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type NewsletterCreateManyInput = {
   id?: number
   email: string
+  date_created?: Date | string
 }
 
 export type NewsletterUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type NewsletterUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  date_created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type NewsletterCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type NewsletterAvgOrderByAggregateInput = {
@@ -269,11 +289,13 @@ export type NewsletterAvgOrderByAggregateInput = {
 export type NewsletterMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type NewsletterMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  date_created?: Prisma.SortOrder
 }
 
 export type NewsletterSumOrderByAggregateInput = {
@@ -285,24 +307,28 @@ export type NewsletterSumOrderByAggregateInput = {
 export type NewsletterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["newsletter"]>
 
 export type NewsletterSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["newsletter"]>
 
 export type NewsletterSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
+  date_created?: boolean
 }, ExtArgs["result"]["newsletter"]>
 
 export type NewsletterSelectScalar = {
   id?: boolean
   email?: boolean
+  date_created?: boolean
 }
 
-export type NewsletterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email", ExtArgs["result"]["newsletter"]>
+export type NewsletterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "date_created", ExtArgs["result"]["newsletter"]>
 
 export type $NewsletterPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Newsletter"
@@ -310,6 +336,7 @@ export type $NewsletterPayload<ExtArgs extends runtime.Types.Extensions.Internal
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     email: string
+    date_created: Date
   }, ExtArgs["result"]["newsletter"]>
   composites: {}
 }
@@ -735,6 +762,7 @@ export interface Prisma__NewsletterClient<T, Null = never, ExtArgs extends runti
 export interface NewsletterFieldRefs {
   readonly id: Prisma.FieldRef<"Newsletter", 'Int'>
   readonly email: Prisma.FieldRef<"Newsletter", 'String'>
+  readonly date_created: Prisma.FieldRef<"Newsletter", 'DateTime'>
 }
     
 

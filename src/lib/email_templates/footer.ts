@@ -1,12 +1,12 @@
 export const emailFooter = `
-<div style="background-color: #f9fafb; padding: 40px 20px; text-align: center; font-family: 'Inter', sans-serif;">
+<div style="background-color: #FAFAFAFF; padding: 48px 20px; text-align: center; border-top: 1px solid #EDEDEDFF;">
     <div style="margin-bottom: 24px;">
-        <a href="https://vijstack.com" style="color: #6b7280; text-decoration: none; margin: 0 15px; font-size: 13px; font-weight: 500;">Website</a>
-        <a href="https://vijstack.com/work" style="color: #6b7280; text-decoration: none; margin: 0 15px; font-size: 13px; font-weight: 500;">Work</a>
-        <a href="https://vijstack.com/contact" style="color: #6b7280; text-decoration: none; margin: 0 15px; font-size: 13px; font-weight: 500;">Contact</a>
+        <a href="https://vijstack.com" style="color: #7C737EFF; text-decoration: none; margin: 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em;">WEBSITE</a>
+        <a href="https://vijstack.com/work" style="color: #7C737EFF; text-decoration: none; margin: 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em;">PORTFOLIO</a>
+        <a href="https://vijstack.com/contact" style="color: #7C737EFF; text-decoration: none; margin: 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em;">GET IN TOUCH</a>
     </div>
-    <p style="color: #9ca3af; font-size: 11px; margin: 0; letter-spacing: 0.5px; text-transform: uppercase;">
-        &copy; ${new Date().getFullYear()} VijStack &bull; Elevated Digital Experiences
+    <p style="color: #A099A1FF; font-size: 11px; margin: 0; letter-spacing: 1px; font-weight: 500;">
+        &copy; ${new Date().getFullYear()} VIJSTACK &bull; ELEVATED DIGITAL EXPERIENCES
     </p>
 </div>
 `;

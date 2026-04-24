@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'sonner';
 import { subscribeToNewsletter } from '@/lib/apis/Newsletter';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 export default function Footer() {
     const [email, setEmail] = useState('');
@@ -98,21 +100,20 @@ export default function Footer() {
                             Subscribe to our newsletter for the latest updates and tech insights.
                         </p>
                         <form onSubmit={handleSubscribe} className="flex space-x-2">
-                            <input
+                            <Input
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
                                 required
-                                className="flex-1 min-w-0 px-3 py-2 text-sm border rounded-md border-input bg-background focus:outline-none focus:ring-1 focus:ring-ring"
+                                className="flex-1 min-w-0"
                             />
-                            <button
+                            <Button
                                 type='submit'
                                 disabled={isPending}
-                                className="px-3 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {isPending ? 'Joining...' : 'Join'}
-                            </button>
+                            </Button>
                         </form>
                     </div>
                 </div>

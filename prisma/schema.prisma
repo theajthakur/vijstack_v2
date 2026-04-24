@@ -14,14 +14,16 @@ datasource db {
 }
 
 model Feedback {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String?
+  date_created DateTime @default(now())
 }
 
 model Newsletter {
-  id    Int    @id @default(autoincrement())
-  email String @unique
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  date_created DateTime @default(now())
 }
 
 model Quote {
@@ -32,5 +34,5 @@ model Quote {
   projectType  String
   message      String
   phone        String
-  date         DateTime @default(now())
+  date_created DateTime @default(now())
 }

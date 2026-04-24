@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Button } from '@/components/ui/button';
 
 interface FAQItem {
     question: string;
@@ -35,16 +36,17 @@ export function FAQSection({ title, description, faqs }: FAQSectionProps) {
                 <div className="space-y-4">
                     {faqs.map((faq, idx) => (
                         <div key={idx} className="border border-border rounded-xl bg-background overflow-hidden">
-                            <button
+                            <Button
+                                variant="ghost"
                                 onClick={() => toggleFAQ(idx)}
-                                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                                className="w-full flex items-center justify-between p-6 text-left h-auto hover:bg-transparent"
                             >
                                 <span className="font-semibold text-lg">{faq.question}</span>
                                 <ChevronDownIcon
                                     className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''
                                         }`}
                                 />
-                            </button>
+                            </Button>
                             <div
                                 className={`px-6 text-muted-foreground transition-all duration-300 ease-in-out overflow-hidden ${openIndex === idx ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                                     }`}

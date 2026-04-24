@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+
   /* Base */
   /* near-black, softer than pure black */
 
@@ -66,10 +67,33 @@
   --color-foreground: var(--foreground);
 
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-100: #fffbea;
+  --color-primary-200: #fff3c4;
+  --color-primary-300: #fce588;
+  --color-primary-400: #fadb5f;
+  --color-primary-500: #f7c948;
+  --color-primary-600: #f0b429;
+  --color-primary-700: #de911d;
+  --color-primary-800: #cb6e17;
+  --color-primary-900: #b44d12;
+
+  /* NEUTRAL (White → Black) */
+  --color-neutral-100: #FAFAFAFF;
+  --color-neutral-200: #EDEDEDFF;
+  --color-neutral-300: #E8E6E8FF;
+  --color-neutral-400: #C3BFC4FF;
+  --color-neutral-500: #A099A1FF;
+  --color-neutral-600: #7C737EFF;
+  --color-neutral-700: #584D5AFF;
+  --color-neutral-800: #342636FF;
+  --color-neutral-900: #100013FF;
+
+  --color-primary-foreground: var(--color-neutral-100);
+  --color-primary: var(--color-primary-900);
+
+  --color-secondary: var(--color-neutral-500);
+  --color-secondary-foreground: var(--color-neutral-100);
 
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
@@ -149,7 +173,27 @@
   --radius-3xl: calc(var(--radius) + 12px);
 
   --radius-4xl: calc(var(--radius) + 16px)
-}
+;
+
+  --animate-marquee: marquee var(--duration) infinite linear;
+
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }}
 
 body {
   font-family: Inter, Helvetica, sans-serif;
@@ -193,7 +237,13 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::selection {
+  background-color: var(--color-primary-900);
+  color: var(--color-primary-100);
 }

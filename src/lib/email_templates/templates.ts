@@ -11,35 +11,26 @@ export const EmailToClient = (email: string, name: string) => {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Received - VijStack</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+<body style="margin: 0; padding: 0; background-color: #FAFAFAFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border: 1px solid #EDEDEDFF; border-radius: 24px; overflow: hidden; border-collapse: separate;">
+        <tr><td>${emailNavbar}</td></tr>
         <tr>
-            <td>
-                ${emailNavbar}
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 0 40px 60px 40px;">
-                <h2 style="color: #111827; font-size: 28px; margin-bottom: 16px; font-weight: 700; letter-spacing: -0.5px;">Hello ${name},</h2>
-                <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 32px;">
-                    We've received your inquiry at **VijStack**. Our team is currently reviewing your message and we'll get back to you with the next steps shortly.
+            <td style="padding: 48px 40px;">
+                <h2 style="color: #000000; font-size: 32px; margin: 0 0 24px 0; font-weight: 800; letter-spacing: -0.02em;">Hello ${name},</h2>
+                <p style="color: #4B5563; font-size: 16px; line-height: 1.6; margin: 0 0 32px 0;">
+                    We've received your inquiry at <strong>VijStack</strong>. Our team is currently reviewing your project details and we'll get back to you with a tailored response shortly.
                 </p>
-                <div style="height: 1px; background-color: #e5e7eb; margin-bottom: 32px;"></div>
-                <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 40px;">
-                    In the meantime, you can explore some of our latest digital transformations.
+                <div style="background-color: #f7c948; height: 4px; width: 60px; margin-bottom: 32px; border-radius: 2px;"></div>
+                <p style="color: #4B5563; font-size: 16px; line-height: 1.6; margin: 0 0 40px 0;">
+                    In the meantime, feel free to explore our latest digital transformations and case studies.
                 </p>
-                <a href="https://vijstack.com/work" style="display: inline-block; background-color: #3b82f6; color: #ffffff; font-weight: 600; padding: 14px 28px; border-radius: 4px; text-decoration: none; font-size: 14px; letter-spacing: 0.5px;">
+                <a href="https://vijstack.com/work" style="display: inline-block; background-color: #000000; color: #ffffff; font-weight: 700; padding: 16px 32px; border-radius: 100px; text-decoration: none; font-size: 14px; letter-spacing: 0.05em; text-align: center;">
                     VIEW PORTFOLIO
                 </a>
             </td>
         </tr>
-        <tr>
-            <td>
-                ${emailFooter}
-            </td>
-        </tr>
+        <tr><td>${emailFooter}</td></tr>
     </table>
 </body>
 </html>
@@ -57,39 +48,30 @@ export const EmailToVijStackTeam = (message: string, client_email: string) => {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+<body style="margin: 0; padding: 0; background-color: #FAFAFAFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border: 1px solid #EDEDEDFF; border-radius: 24px; overflow: hidden; border-collapse: separate;">
+        <tr><td>${emailNavbar}</td></tr>
         <tr>
-            <td>
-                ${emailNavbar}
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 0 40px 60px 40px;">
-                <h2 style="color: #111827; font-size: 22px; margin-bottom: 32px; font-weight: 600; letter-spacing: -0.3px;">New Inquiry Received</h2>
-                <div style="background-color: #f9fafb; padding: 32px; border: 1px solid #e5e7eb; border-radius: 4px;">
-                    <p style="color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; font-weight: 700;">Source</p>
-                    <p style="color: #111827; font-size: 15px; margin-bottom: 32px; font-weight: 500;">
-                        ${client_email}
-                    </p>
+            <td style="padding: 48px 40px;">
+                <div style="display: inline-block; background-color: #f7c948; color: #000000; font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 6px; margin-bottom: 16px; letter-spacing: 0.05em;">NEW INQUIRY</div>
+                <h2 style="color: #000000; font-size: 28px; margin: 0 0 32px 0; font-weight: 800; letter-spacing: -0.01em;">Action Required</h2>
+                
+                <div style="background-color: #FAFAFAFF; padding: 32px; border: 1px solid #EDEDEDFF; border-radius: 16px;">
+                    <p style="color: #7C737EFF; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px 0; font-weight: 700;">Client Email</p>
+                    <p style="color: #000000; font-size: 16px; margin: 0 0 32px 0; font-weight: 600;">${client_email}</p>
                     
-                    <p style="color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; font-weight: 700;">Message Body</p>
-                    <p style="color: #374151; font-size: 15px; line-height: 1.8; white-space: pre-wrap; margin: 0;">
-                        ${message}
-                    </p>
+                    <p style="color: #7C737EFF; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px 0; font-weight: 700;">Project Details</p>
+                    <div style="color: #374151; font-size: 15px; line-height: 1.7; white-space: pre-wrap; margin: 0;">${message}</div>
                 </div>
+
                 <div style="margin-top: 40px; text-align: center;">
-                    <a href="mailto:${client_email}" style="color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: 600; border-bottom: 1px solid #3b82f6; padding-bottom: 2px;">
-                        Reply directly to client &rarr;
+                    <a href="mailto:${client_email}" style="display: inline-block; background-color: #000000; color: #ffffff; font-weight: 700; padding: 16px 32px; border-radius: 100px; text-decoration: none; font-size: 14px; letter-spacing: 0.05em;">
+                        REPLY TO CLIENT
                     </a>
                 </div>
             </td>
         </tr>
-        <tr>
-            <td>
-                ${emailFooter}
-            </td>
-        </tr>
+        <tr><td>${emailFooter}</td></tr>
     </table>
 </body>
 </html>
@@ -106,36 +88,26 @@ export const EmailNewsletterSubscribed = (email: string, name?: string) => {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to VijStack</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+<body style="margin: 0; padding: 0; background-color: #FAFAFAFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border: 1px solid #EDEDEDFF; border-radius: 24px; overflow: hidden; border-collapse: separate;">
+        <tr><td>${emailNavbar}</td></tr>
         <tr>
-            <td>
-                ${emailNavbar}
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 0 40px 60px 40px; text-align: center;">
-                <h2 style="color: #111827; font-size: 32px; margin-bottom: 20px; font-weight: 700; letter-spacing: -1px;">Welcome to the fold.</h2>
-                <p style="color: #4b5563; font-size: 16px; line-height: 1.8; margin-bottom: 32px; max-width: 400px; margin-left: auto; margin-right: auto;">
-                    We've added **${email}** to our inner circle. Expect exclusive tech insights and architectural deep-dives.
+            <td style="padding: 60px 40px; text-align: center;">
+                <h2 style="color: #000000; font-size: 36px; margin: 0 0 20px 0; font-weight: 800; letter-spacing: -0.03em;">Welcome to the fold.</h2>
+                <p style="color: #4B5563; font-size: 17px; line-height: 1.6; margin: 0 auto 40px auto; max-width: 420px;">
+                    We've added <strong>${email}</strong> to our inner circle. Expect high-signal tech insights and architectural deep-dives.
                 </p>
-                <div style="margin: 40px 0;">
-                    <a href="https://vijstack.com" style="display: inline-block; background-color: #000000; color: #ffffff; font-weight: 600; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase;">
-                        Enter Marketplace
-                    </a>
-                </div>
-                <p style="color: #9ca3af; font-size: 13px;">
+                <div style="background-color: #f7c948; height: 4px; width: 60px; margin: 0 auto 40px auto; border-radius: 2px;"></div>
+                <a href="https://vijstack.com" style="display: inline-block; background-color: #000000; color: #ffffff; font-weight: 700; padding: 16px 36px; border-radius: 100px; text-decoration: none; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase;">
+                    EXPLORE SOLUTIONS
+                </a>
+                <p style="color: #A099A1FF; font-size: 13px; margin-top: 40px; font-weight: 500;">
                     Zero noise. Pure signal.
                 </p>
             </td>
         </tr>
-        <tr>
-            <td>
-                ${emailFooter}
-            </td>
-        </tr>
+        <tr><td>${emailFooter}</td></tr>
     </table>
 </body>
 </html>

@@ -15,11 +15,11 @@ export default function About() {
             <section className="relative z-10 pb-16 md:pb-24 lg:pb-32 container px-4 mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div className="flex-1 text-center lg:text-left space-y-8">
-                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-                            Crafting Digital <br className="hidden lg:block" /> Excellence
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.3] text-neutral-900">
+                            Fast. Reliable. <br className="hidden lg:block" />  <span className='text-primary-900'>Yes</span>, both.
                         </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
-                            Helping businesses build a strong, reliable online presence through clean design, solid development, and a clear delivery process.
+                        <p className="text-lg md:text-xl text-neutral-700">
+                            We design, build, and ship production-ready web products—without delays or drama.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
