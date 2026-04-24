@@ -1,168 +1,141 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import {
-    CheckCircleIcon,
-    BuildingStorefrontIcon,
-    RocketLaunchIcon,
-    ShoppingBagIcon,
-    SparklesIcon,
-    ArrowRightIcon
-} from '@heroicons/react/24/outline';
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Code2, Zap, ShieldCheck } from "lucide-react";
 
 export default function About() {
     return (
-        <div className="w-full min-h-screen bg-background text-foreground overflow-hidden">
-            <section className="relative z-10 pb-16 md:pb-24 lg:pb-32 container px-4 mx-auto">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-                    <div className="flex-1 text-center lg:text-left space-y-8">
-                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.3] text-neutral-900">
-                            Fast. Reliable. <br className="hidden lg:block" />  <span className='text-primary-900'>Yes</span>, both.
+        <section className="min-h-screen pt-32 pb-24 bg-background overflow-hidden selection:bg-primary selection:text-neutral-900">
+            {/* Background Decor */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] -z-10 rounded-full" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] -z-10 rounded-full" />
+
+            <div className="container px-4 mx-auto">
+                <div className="space-y-24">
+                    {/* Hero Hook */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7 }}
+                        className="space-y-8 justify-center flex flex-col items-center"
+                    >
+                        <h1 className="text-5xl md:text-8xl font-black tracking-tight text-neutral-900 leading-[0.95]">
+                            We don't do <br />
+                            <span className="text-primary italic">"Innovation"</span>.
                         </h1>
-                        <p className="text-lg md:text-xl text-neutral-700">
-                            We design, build, and ship production-ready web products—without delays or drama.
+                        <p className="text-lg text-neutral-600  text-center font-medium leading-tight max-w-2xl">
+                            Most agencies sell you on buzzwords and "synergy".<br />
+                            We just build stuff that actually works.
                         </p>
+                    </motion.div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                            <Link href="/contact" className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all flex items-center gap-2">
-                                Start a Project <ArrowRightIcon className="w-4 h-4" />
-                            </Link>
-                            <Link href="#niche" className="px-8 py-3 rounded-lg border border-border bg-background hover:bg-accent hover:text-accent-foreground font-medium transition-all">
-                                Explore Services
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="flex-1 w-full flex justify-center lg:justify-end">
-                        <Image
-                            src="/illustrations/relaxed.png"
-                            alt="Relaxed Working"
-                            width={500}
-                            height={400}
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section className="relative z-10 bg-muted/30 border-y border-border/50">
-                <div className="container px-4 md:px-6 mx-auto">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
-                        <div className="w-full lg:w-1/2 space-y-8">
-                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                                Simple. Scalable. <span className="text-primary">Reliable.</span>
-                            </h2>
-                            <p className="text-muted-foreground text-lg leading-relaxed">
-                                We aim to make going online simple and stress-free. At Vijstack, success is not just launching a website — it’s helping businesses grow with confidence.
+                    {/* Core Philosophy */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start"
+                    >
+                        <div className="space-y-6">
+                            <h2 className="text-4xl font-bold tracking-tight">Execution over excuses.</h2>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                At Vijstack, we’re a full-stack agency for founders who care about the final product, not the presentation deck. We specialize in fast delivery and scalable systems that don’t fall apart the moment you scale.
                             </p>
-
-                            <div className="space-y-6">
-                                {[
-                                    { text: "Build websites that support real business goals", title: "Business Focused" },
-                                    { text: "Deliver digital products that are scalable, fast, and easy to manage", title: "Technical Excellence" },
-                                    { text: "Earn long-term trust through clarity, quality, and reliability", title: "Trust & Transparency" }
-                                ].map((item, idx) => (
-                                    <div key={idx} className="flex gap-4">
-                                        <div className="shrink-0 mt-1">
-                                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                                <CheckCircleIcon className="w-6 h-6" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                                            <p className="text-muted-foreground">{item.text}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                Whether it's a complex CRM, a real-time dashboard, or a massive eCommerce platform, we build it from the ground up. No bloated templates, no "magic" tools—just clean, battle-tested code.
+                            </p>
                         </div>
 
-                        <div className="w-full lg:w-1/2 relative">
-                            <Image src="/illustrations/webpages.png" alt="Webpages" width={600} height={400} />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Niche Section */}
-            <section id="niche" className="relative z-10 py-24">
-                <div className="container px-4 md:px-6 mx-auto">
-                    <div className="text-center mb-20">
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Our Niche</h2>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                            Specialized expertise where it matters most.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Card 1 */}
-                        <div className="group relative rounded-3xl border border-border bg-card p-1 duration-500">
-                            <div className="h-full rounded-[20px] bg-background/95 backdrop-blur-sm p-8 transition-transform group-hover:scale-[0.99]">
-                                <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6 text-orange-500">
-                                    <BuildingStorefrontIcon className="w-8 h-8" />
+                        <div className="grid grid-cols-1 gap-6">
+                            <div className="p-8 rounded-3xl border border-border bg-card/30 backdrop-blur-xl space-y-4">
+                                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                                    <Code2 className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-4">Offline Businesses</h3>
-                                <ul className="space-y-4">
-                                    {["Local businesses", "Professionals & service providers", "Small brands needing web presence"].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h3 className="text-xl font-bold">Custom, Not Glued.</h3>
+                                <p className="text-sm text-muted-foreground">
+                                    We don't just stitch third-party SaaS tools together. We engineer solutions that you actually own.
+                                </p>
                             </div>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div className="group relative rounded-3xl border border-border bg-card p-1">
-                            <div className="h-full rounded-[20px] bg-background/95 backdrop-blur-sm p-8 transition-transform group-hover:scale-[0.99]">
-                                <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500">
-                                    <RocketLaunchIcon className="w-8 h-8" />
+                            <div className="p-8 rounded-3xl border border-border bg-card/30 backdrop-blur-xl space-y-4">
+                                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                                    <Zap className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-4">Startups & Founders</h3>
-                                <ul className="space-y-4">
-                                    {["MVPs & SaaS platforms", "Product landing pages", "Scalable web systems"].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h3 className="text-xl font-bold">Fast. Really Fast.</h3>
+                                <p className="text-sm text-muted-foreground">
+                                    We ship production-ready code while others are still debating font sizes in their weekly meetings.
+                                </p>
                             </div>
                         </div>
+                    </motion.div>
 
-                        {/* Card 3 */}
-                        <div className="group relative rounded-3xl border border-border bg-card p-1">
-                            <div className="h-full rounded-[20px] bg-background/95 backdrop-blur-sm p-8 transition-transform group-hover:scale-[0.99]">
-                                <div className="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center mb-6 text-green-500">
-                                    <ShoppingBagIcon className="w-8 h-8" />
+                    {/* The "Different" Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="p-12 md:p-20 rounded-[40px] bg-neutral-950 text-white relative overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[80px] -z-0" />
+                        <div className="relative z-10 space-y-8">
+                            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">We're for the builders.</h2>
+                            <p className="text-xl text-white/70 max-w-2xl leading-relaxed">
+                                We work with startups and businesses who are tired of technical debt and endless "almost done" reports. We value long-term reliability and performance over short-term hacks.
+                            </p>
+                            <div className="flex flex-wrap gap-8 pt-4">
+                                <div className="space-y-2">
+                                    <p className="text-primary font-black text-4xl">100%</p>
+                                    <p className="text-white/50 text-xs font-bold uppercase tracking-widest">Execution</p>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-4">Ecommerce Brands</h3>
-                                <ul className="space-y-4">
-                                    {["End-to-end ecommerce websites", "Clean buying flows", "High-performance storefronts"].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className="space-y-2">
+                                    <p className="text-primary font-black text-4xl">0%</p>
+                                    <p className="text-white/50 text-xs font-bold uppercase tracking-widest">Corporate Drama</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <p className="text-primary font-black text-4xl">24/7</p>
+                                    <p className="text-white/50 text-xs font-bold uppercase tracking-widest">Reliability</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </motion.div>
 
-            {/* CTA Section */}
-            <section className="py-24 relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary/5 -z-10" />
-                <div className="container px-4 mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to scale your business?</h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-                        Join companies that trust Vijstack for their digital transformation.
-                    </p>
-                    <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
-                        Get in Touch
-                    </Link>
+                    {/* Closing Hook */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="text-center space-y-10"
+                    >
+                        <div className="space-y-4">
+                            <h3 className="text-4xl md:text-6xl font-black tracking-tight text-neutral-900">
+                                We ship. Not "almost done".
+                            </h3>
+                            <p className="text-lg text-muted-foreground">
+                                Ready to stop hearing excuses and start seeing results?
+                            </p>
+                        </div>
+                        <Button asChild className="rounded-full px-12 h-14 text-lg font-bold">
+                            <Link href="/contact" className="flex items-center gap-2">
+                                Talk to an Engineer <ArrowRight className="w-5 h-5" />
+                            </Link>
+                        </Button>
+                    </motion.div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    );
+}
+
+function Button({ className, asChild, ...props }: any) {
+    const Comp = asChild ? React.Fragment : "button";
+    return (
+        <button
+            className={`inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 ${className}`}
+            {...props}
+        />
     );
 }
