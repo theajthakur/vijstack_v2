@@ -154,7 +154,7 @@ export default function Testimonials() {
             <div className="container px-4 mx-auto relative z-10 mb-16">
                 <div className="text-center max-w-3xl mx-auto space-y-4">
                     <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
-                        Why Developers <span className="text-primary italic pr-5">Trust</span> Us
+                        Apparently, <span className="text-primary italic pr-5"> We’re Good</span>
                     </h2>
                 </div>
             </div>

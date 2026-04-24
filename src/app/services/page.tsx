@@ -11,9 +11,9 @@ import { cn } from '@/lib/utils';
 
 export default function ServicesPage() {
     return (
-        <div className="min-h-screen bg-background pt-24 pb-20 overflow-hidden">
+        <div className="min-h-screen bg-background pt-8 sm:pt-12 md:pt-16 lg:pt-24 pb-20 overflow-hidden">
             {/* Hero Section */}
-            <section className="container px-4 mx-auto mb-24">
+            <section className="container px-4 mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-24">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -38,7 +38,7 @@ export default function ServicesPage() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="flex-1 w-full max-w-2xl"
+                        className="hidden lg:block flex-1 w-full max-w-2xl"
                     >
                         <div className="relative aspect-square lg:aspect-video w-full">
                             <Image
@@ -54,7 +54,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Services List */}
-            <section id="all-services" className="container px-4 mx-auto space-y-32">
+            <section id="all-services" className="container px-4 mx-auto space-y-12 md:space-y-16 lg:space-y-32">
                 {services.map((service, index) => (
                     <motion.div
                         key={service.slug}
@@ -68,13 +68,13 @@ export default function ServicesPage() {
                         )}
                     >
                         {/* Service Visual */}
-                        <div className="flex-1 w-full max-w-md">
+                        <div className="flex-1 w-full max-w-[320px]">
                             <div className={cn(
-                                "aspect-[4/3] rounded-[3rem] flex items-center justify-center relative group overflow-hidden border border-border/50",
+                                "aspect-[4/3] rounded-2xl flex items-center justify-center relative group overflow-hidden border border-border/50",
                                 service.bg
                             )}>
                                 <div className="absolute inset-0 bg-linear-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                                <Image 
+                                <Image
                                     src={service.image}
                                     alt={service.title}
                                     fill
@@ -93,8 +93,10 @@ export default function ServicesPage() {
                                     <span className="text-lg opacity-80 font-semibold">Starting from</span>
                                     <span className="text-2xl md:text-4xl">{service.price}</span>
                                 </div>
-                                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pt-2">
-                                    {service.detailedDescription}
+                                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pt-2 line-clamp-2 max-w-2xl mx-auto lg:mx-0">
+                                    {service.detailedDescription.length > 100
+                                        ? service.detailedDescription.substring(0, 100) + "..."
+                                        : service.detailedDescription}
                                 </p>
                             </div>
 
@@ -110,10 +112,10 @@ export default function ServicesPage() {
 
             {/* Final CTA */}
             <section className="container px-4 mx-auto mt-32">
-                <div className="bg-primary-900 rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+                <div className="bg-primary-900 rounded-[3rem] px-6 py-12 md:px-12 md:py-24 text-center text-white relative overflow-hidden shadow-2xl">
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
                     <div className="relative z-10 space-y-8">
-                        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">Ready to build something <span className="italic opacity-80">extraordinary</span>?</h2>
+                        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">Ready to build something <span className="italic opacity-80 px-2 lg:px-4">extraordinary</span>?</h2>
                         <p className="text-xl text-white/70 max-w-2xl mx-auto">
                             Whether you're a startup or an established enterprise, we have the technical expertise to bring your vision to life.
                         </p>
