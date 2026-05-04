@@ -121,7 +121,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <p className="text-xs text-muted-foreground">
-                        &copy; {new Date().getFullYear()} Vijstack Agency. All rights reserved.
+                        &copy; {new Date().getFullYear()} Vijstack. All rights reserved.
                     </p>
                     <div className="flex space-x-6">
                         <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">

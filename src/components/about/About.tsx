@@ -22,12 +22,12 @@ export default function About() {
                         className="space-y-8 justify-center flex flex-col items-center"
                     >
                         <h1 className="text-5xl md:text-8xl font-black tracking-tight text-neutral-900 leading-[0.95]">
-                            We don't do <br />
+                            I don't do <br />
                             <span className="text-primary italic">"Innovation"</span>.
                         </h1>
                         <p className="text-lg text-neutral-600  text-center font-medium leading-tight max-w-2xl">
-                            Most agencies sell you on buzzwords and "synergy".<br />
-                            We just build stuff that actually works.
+                            Most others sell you on buzzwords and "synergy".<br />
+                            I just build stuff that actually works.
                         </p>
                     </motion.div>
 
@@ -42,10 +42,10 @@ export default function About() {
                         <div className="space-y-6">
                             <h2 className="text-4xl font-bold tracking-tight">Execution over excuses.</h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                At Vijstack, we’re a full-stack agency for founders who care about the final product, not the presentation deck. We specialize in fast delivery and scalable systems that don’t fall apart the moment you scale.
+                                At Vijstack, I’m a full-stack developer for founders who care about the final product, not the presentation deck. I specialize in fast delivery and scalable systems that don’t fall apart the moment you scale.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Whether it's a complex CRM, a real-time dashboard, or a massive eCommerce platform, we build it from the ground up. No bloated templates, no "magic" tools—just clean, battle-tested code.
+                                Whether it's a complex CRM, a real-time dashboard, or a massive eCommerce platform, I build it from the ground up. No bloated templates, no "magic" tools, just clean, battle-tested code.
                             </p>
                         </div>
 
@@ -56,7 +56,7 @@ export default function About() {
                                 </div>
                                 <h3 className="text-xl font-bold">Custom, Not Glued.</h3>
                                 <p className="text-sm text-muted-foreground">
-                                    We don't just stitch third-party SaaS tools together. We engineer solutions that you actually own.
+                                    I don't just stitch third-party SaaS tools together. I engineer solutions that you actually own.
                                 </p>
                             </div>
                             <div className="p-8 rounded-3xl border border-border bg-card/30 backdrop-blur-xl space-y-4">
@@ -65,7 +65,7 @@ export default function About() {
                                 </div>
                                 <h3 className="text-xl font-bold">Fast. Really Fast.</h3>
                                 <p className="text-sm text-muted-foreground">
-                                    We ship production-ready code while others are still debating font sizes in their weekly meetings.
+                                    I ship production-ready code while others are still debating font sizes in their weekly meetings.
                                 </p>
                             </div>
                         </div>
@@ -81,9 +81,9 @@ export default function About() {
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[80px] -z-0" />
                         <div className="relative z-10 space-y-8">
-                            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">We're for the builders.</h2>
+                            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">I'm for the builders.</h2>
                             <p className="text-xl text-white/70 max-w-2xl leading-relaxed">
-                                We work with startups and businesses who are tired of technical debt and endless "almost done" reports. We value long-term reliability and performance over short-term hacks.
+                                I work with startups and businesses who are tired of technical debt and endless "almost done" reports. I value long-term reliability and performance over short-term hacks.
                             </p>
                             <div className="flex flex-wrap gap-8 pt-4">
                                 <div className="space-y-2">
@@ -112,7 +112,7 @@ export default function About() {
                     >
                         <div className="space-y-4">
                             <h3 className="text-4xl md:text-6xl font-black tracking-tight text-neutral-900">
-                                We ship. Not "almost done".
+                                I ship. Not "almost done".
                             </h3>
                             <p className="text-lg text-muted-foreground">
                                 Ready to stop hearing excuses and start seeing results?

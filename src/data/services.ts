@@ -69,7 +69,7 @@ export const services = [
         title: "Website Revamps",
         slug: "website-revamps",
         description: "Transform outdated sites into modern, high-converting experiences with a complete visual and technical overhaul.",
-        detailedDescription: "Is your website feeling outdated or slow? A revamp can breathe new life into your brand. We analyze your existing site's weaknesses and perform a complete overhaul—improving the UI/UX, updating the tech stack, and optimizing for modern search engine standards.",
+        detailedDescription: "Is your website feeling outdated or slow? A revamp can breathe new life into your brand. We analyze your existing site's weaknesses and perform a complete overhaul, improving the UI/UX, updating the tech stack, and optimizing for modern search engine standards.",
         icon: ArrowPathRoundedSquareIcon,
         image: "/services/revamp.png",
         price: "₹14,999",

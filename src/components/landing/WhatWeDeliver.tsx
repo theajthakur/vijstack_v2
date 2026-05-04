@@ -22,7 +22,7 @@ export default function WhatWeDeliver() {
                         What We <span className="text-primary italic">Deliver</span>
                     </h2>
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                        We don't just write code—we build digital products that solve real business problems and drive measurable growth.
+                        We don't just write code, we build digital products that solve real business problems and drive measurable growth.
                     </p>
                 </div>
 
