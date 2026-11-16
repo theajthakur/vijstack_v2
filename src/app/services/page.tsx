@@ -1,130 +1,68 @@
-"use client";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, Check } from "lucide-react";
+import PageHeader from "@/components/ui/PageHeader";
+import CtaBand from "@/components/home/CtaBand";
+import Faq from "@/components/home/Faq";
+import JsonLd from "@/components/JsonLd";
+import { services } from "@/lib/services";
+import { faqs } from "@/lib/faqs";
+import { breadcrumbSchema, servicesListSchema } from "@/lib/schema";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import { services } from '@/data/services';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+export const metadata: Metadata = {
+  title: "Web Development Services: Websites, SEO, E-commerce & More",
+  description:
+    "Custom websites, SEO, e-commerce, startup landing pages, security plans, lead generation, startup kits, custom CMS, admin panels and website maintenance.",
+  alternates: { canonical: "/services" },
+  openGraph: { url: "/services" },
+};
 
 export default function ServicesPage() {
-    return (
-        <div className="min-h-screen bg-background pt-8 sm:pt-12 md:pt-16 lg:pt-24 pb-20 overflow-hidden">
-            {/* Hero Section */}
-            <section className="container px-4 mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-24">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="flex-1 space-y-8 text-center lg:text-left"
-                    >
-                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
-                            Reliable Digital <span className="text-primary italic">Solutions</span>
-                        </h1>
-                        <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                            We translate complex business goals into clear, functional digital products. No fluff, just results that move the needle.
-                        </p>
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                            <Button asChild size="lg" className="rounded-full px-8">
-                                <Link href="/contact">Start a Project</Link>
-                            </Button>
-                            <Button asChild variant="outline" size="lg" className="rounded-full px-8">
-                                <Link href="#all-services">Explore Services</Link>
-                            </Button>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="hidden lg:block flex-1 w-full max-w-2xl"
-                    >
-                        <div className="relative aspect-square lg:aspect-video w-full">
-                            <Image
-                                src="/illustrations/services.png"
-                                alt="VijStack Services"
-                                fill
-                                className="object-contain"
-                                priority
-                            />
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+  return (
+    <>
+      <JsonLd data={[servicesListSchema(services), breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])]} />
+      <PageHeader
+        title="Services that get your business online and growing"
+        intro="From a first landing page to a full store, CMS or admin panel, plus the SEO, security and support that keep it working."
+        crumbs={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]}
+      />
 
-            {/* Services List */}
-            <section id="all-services" className="container px-4 mx-auto space-y-12 md:space-y-16 lg:space-y-32">
-                {services.map((service, index) => (
-                    <motion.div
-                        key={service.slug}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
-                        className={cn(
-                            "flex flex-col lg:flex-row items-center gap-12 lg:gap-24",
-                            index % 2 === 1 && "lg:flex-row-reverse"
-                        )}
-                    >
-                        {/* Service Visual */}
-                        <div className="flex-1 w-full max-w-[320px]">
-                            <div className={cn(
-                                "aspect-[4/3] rounded-2xl flex items-center justify-center relative group overflow-hidden border border-border/50",
-                                service.bg
-                            )}>
-                                <div className="absolute inset-0 bg-linear-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                                <Image
-                                    src={service.image}
-                                    alt={service.title}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Service Content */}
-                        <div className="flex-1 space-y-8 text-center lg:text-left">
-                            <div className="space-y-4">
-                                <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-                                    {service.title}
-                                </h2>
-                                <div className="font-extrabold text-primary flex items-center justify-center lg:justify-start gap-2">
-                                    <span className="text-lg opacity-80 font-semibold">Starting from</span>
-                                    <span className="text-2xl md:text-4xl">{service.price}</span>
-                                </div>
-                                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pt-2 line-clamp-2 max-w-2xl mx-auto lg:mx-0">
-                                    {service.detailedDescription.length > 100
-                                        ? service.detailedDescription.substring(0, 100) + "..."
-                                        : service.detailedDescription}
-                                </p>
-                            </div>
-
-                            <Button asChild variant="ghost" className="group text-primary hover:text-primary hover:bg-primary/5 px-0 text-lg font-bold">
-                                <Link href={`/services/${service.slug}`} className="flex items-center gap-2">
-                                    Read More <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                                </Link>
-                            </Button>
-                        </div>
-                    </motion.div>
-                ))}
-            </section>
-
-            {/* Final CTA */}
-            <section className="container px-4 mx-auto mt-32">
-                <div className="bg-primary-900 rounded-[3rem] px-6 py-12 md:px-12 md:py-24 text-center text-white relative overflow-hidden shadow-2xl">
-                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
-                    <div className="relative z-10 space-y-8">
-                        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">Ready to build something <span className="italic opacity-80 px-2 lg:px-4">extraordinary</span>?</h2>
-                        <p className="text-xl text-white/70 max-w-2xl mx-auto">
-                            Whether you're a startup or an established enterprise, we have the technical expertise to bring your vision to life.
-                        </p>
-                        <Button asChild size="lg" className="bg-white text-neutral-900 hover:bg-neutral-100 rounded-full px-12 h-14 text-lg font-bold">
-                            <Link href="/contact">Get in Touch Now</Link>
-                        </Button>
+      <section className="pb-24">
+        <div className="container-x">
+          <ul className="divide-y divide-line border-y border-line">
+            {services.map((s) => {
+              const Icon = s.icon;
+              return (
+                <li key={s.slug}>
+                  <Link href={`/services/${s.slug}`} className="group grid gap-6 py-10 md:grid-cols-[auto_1fr_1.1fr_auto] md:items-start md:gap-10">
+                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-sky-soft text-cobalt transition-colors group-hover:bg-cobalt group-hover:text-white">
+                      <Icon className="h-6 w-6" aria-hidden />
+                    </span>
+                    <div>
+                      <h2 className="text-3xl font-bold tracking-tight transition-colors group-hover:text-cobalt">{s.title}</h2>
+                      <p className="mt-3 max-w-md text-lg leading-relaxed text-muted">{s.short}</p>
                     </div>
-                </div>
-            </section>
+                    <ul className="grid gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+                      {s.includes.slice(0, 4).map((inc) => (
+                        <li key={inc} className="flex gap-2 text-[15px] text-ink">
+                          <Check className="mt-1 h-4 w-4 shrink-0 text-cobalt" aria-hidden />
+                          {inc}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="hidden h-12 w-12 place-items-center rounded-full border border-line transition-all group-hover:border-cobalt group-hover:bg-cobalt group-hover:text-white md:grid">
+                      <ArrowUpRight className="h-5 w-5" aria-hidden />
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-    );
+      </section>
+
+      <Faq items={faqs.slice(0, 4)} />
+      <CtaBand title="Not sure which service you need?" />
+    </>
+  );
 }

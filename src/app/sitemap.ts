@@ -1,51 +1,24 @@
-import { MetadataRoute } from "next";
-import { mapping } from "./services/[slug]/map";
+import type { MetadataRoute } from "next";
+import { site } from "@/lib/site";
+import { services } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://vijstack.com";
-
-    // Dynamic Routes
-    const services = Object.keys(mapping);
-    const serviceRoutes = services.map((slug) => ({
-        url: `${baseUrl}/services/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-    }));
-
-    // Static Routes
-    const staticRoutes = [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: "daily" as const,
-            priority: 1.0,
-        },
-        {
-            url: `${baseUrl}/services`,
-            lastModified: new Date(),
-            changeFrequency: "weekly" as const,
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/about`,
-            lastModified: new Date(),
-            changeFrequency: "monthly" as const,
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: "monthly" as const,
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/careers`,
-            lastModified: new Date(),
-            changeFrequency: "monthly" as const,
-            priority: 0.6,
-        },
-    ];
-
-    return [...staticRoutes, ...serviceRoutes];
+  const now = new Date();
+  const pages: { path: string; priority: number; freq: "weekly" | "monthly" | "yearly" }[] = [
+    { path: "", priority: 1, freq: "weekly" },
+    { path: "/services", priority: 0.9, freq: "monthly" },
+    { path: "/about", priority: 0.7, freq: "monthly" },
+    { path: "/contact", priority: 0.8, freq: "yearly" },
+    { path: "/privacy", priority: 0.2, freq: "yearly" },
+    { path: "/terms", priority: 0.2, freq: "yearly" },
+  ];
+  return [
+    ...pages.map((p) => ({ url: `${site.url}${p.path}`, lastModified: now, changeFrequency: p.freq, priority: p.priority })),
+    ...services.map((s) => ({
+      url: `${site.url}/services/${s.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 }

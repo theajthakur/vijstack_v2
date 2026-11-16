@@ -1,96 +1,77 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/instrument-sans";
 import "./globals.css";
-import LayoutProvider from "@/provider/LayoutProvider";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/site/Navbar";
+import Footer from "@/components/site/Footer";
+import Analytics from "@/components/site/Analytics";
+import JsonLd from "@/components/JsonLd";
+import { site } from "@/lib/site";
+import { businessSchema, websiteSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "VijStack - Web Development & Digital Solutions Agency",
-    template: "%s | VijStack - Web Development & Digital Solutions",
+    default: "Vijstack | Custom Website Development, SEO & E-commerce",
+    template: "%s | Vijstack",
   },
-  description:
-    "Expert web development company in Greater Noida, Delhi NCR & India. We specialize in custom websites, ecommerce solutions, SaaS development, and digital transformation for businesses.",
+  description: site.description,
+  applicationName: site.name,
   keywords: [
-    "Web Development",
-    "Web Developer near me",
-    "Web Developer Greater Noida",
-    "Web Developer Delhi",
-    "Website Development India",
-    "Ecommerce Development",
-    "SaaS Development",
-    "Next.js Developer",
-    "React Developer",
-    "Digital Agency Greater Noida",
-    "VijStack",
+    "web development",
+    "custom website development",
+    "website developer Greater Noida",
+    "web development Delhi NCR",
+    "Next.js developer India",
+    "e-commerce website development",
+    "SEO services",
+    "landing page for startups",
+    "custom CMS",
+    "admin panel development",
+    "website maintenance",
   ],
-  authors: [{ name: "VijStack" }],
-  creator: "VijStack",
-  publisher: "VijStack",
-  metadataBase: new URL("https://vijstack.com"),
-  alternates: {
-    canonical: "/",
-  },
+  authors: [{ name: "Vijstack", url: site.url }],
+  creator: "Vijstack",
+  publisher: "Vijstack",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "VijStack – Expert Web Development Agency in Greater Noida & Delhi",
-    description:
-      "Transform your business with VijStack. Top-rated web development company offering custom websites, ecommerce, and SaaS solutions in Greater Noida, Delhi NCR.",
-    url: "https://vijstack.com",
-    siteName: "VijStack",
-    locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "https://vijstack.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "VijStack – web development agency greater noida",
-      },
-    ],
+    locale: "en_IN",
+    url: site.url,
+    siteName: site.name,
+    title: "Vijstack | Websites built to win you customers",
+    description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "VijStack – Web Development & Digital Solutions",
-    description:
-      "Expert web development services in Greater Noida & Delhi. Custom websites, ecommerce stores, and SaaS products.",
-    images: ["https://vijstack.com/og-image.png"],
+    title: "Vijstack | Websites built to win you customers",
+    description: site.description,
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
-  verification: {
-    google: "your-google-verification-code", // Placeholder for actual code
-  },
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
+  category: "technology",
+  formatDetection: { telephone: true, email: true },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#f5f7fe",
+  width: "device-width",
+  initialScale: 1,
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} antialiased`}
-      >
-        <LayoutProvider>
-          <div className="pt-10">
-            {children}
-          </div>
-        </LayoutProvider>
+    <html lang="en-IN">
+      <body>
+        <JsonLd data={[businessSchema(), websiteSchema()]} />
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
+        <Analytics />
       </body>
     </html>
   );

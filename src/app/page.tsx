@@ -1,33 +1,33 @@
-import Landing from '@/components/landing/Landing'
-import { JsonLd } from "@/components/seo/JsonLd";
-import { Metadata } from "next";
-import React from 'react'
+import type { Metadata } from "next";
+import Hero from "@/components/home/Hero";
+import ClientsBand from "@/components/home/ClientsBand";
+import ServicesBento from "@/components/home/ServicesBento";
+import Impact from "@/components/home/Impact";
+import Process from "@/components/home/Process";
+import Testimonials from "@/components/home/Testimonials";
+import Faq from "@/components/home/Faq";
+import CtaBand from "@/components/home/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { faqs } from "@/lib/faqs";
+import { faqSchema, servicesListSchema } from "@/lib/schema";
+import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "VijStack - Best Web Development Company in Greater Noida & Delhi",
-  description: "Looking for a web developer near you? VijStack offers top-notch web development, ecommerce, and app development services in Greater Noida, Delhi, and India. Contact us today!",
-  alternates: {
-    canonical: "https://vijstack.com",
-  }
+  alternates: { canonical: "/" },
 };
 
-export default function page() {
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "VijStack",
-    "url": "https://vijstack.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://vijstack.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
-
+export default function Home() {
   return (
     <>
-      <JsonLd data={websiteSchema} />
-      <Landing />
+      <JsonLd data={[faqSchema(faqs), servicesListSchema(services)]} />
+      <Hero />
+      <ClientsBand />
+      <ServicesBento />
+      <Impact />
+      <Process />
+      <Testimonials />
+      <Faq items={faqs} />
+      <CtaBand />
     </>
-  )
+  );
 }
