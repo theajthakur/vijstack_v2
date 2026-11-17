@@ -1,6 +1,6 @@
 import { renderOg, ogSize } from "@/lib/og";
 
-export const alt = "Vijstack: websites built to win you customers";
+export const alt = "VijStack: websites built to win you customers";
 export const size = ogSize;
 export const contentType = "image/png";
 

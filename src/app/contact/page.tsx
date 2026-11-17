@@ -8,9 +8,9 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact Vijstack: Get a Website Quote",
+  title: "Contact VijStack: Get a Website Quote",
   description:
-    "Tell Vijstack about your project and get a clear plan and written quote. Email vijstack@gmail.com, call or WhatsApp +91 96951 46906.",
+    "Tell VijStack about your project and get a clear plan and written quote. Email vijstack@gmail.com, call or WhatsApp +91 96951 46906.",
   alternates: { canonical: "/contact" },
   openGraph: { url: "/contact" },
 };
@@ -27,7 +27,7 @@ export default function ContactPage() {
     <>
       <JsonLd
         data={[
-          { "@context": "https://schema.org", "@type": "ContactPage", url: `${site.url}/contact`, name: "Contact Vijstack", about: { "@id": `${site.url}/#business` } },
+          { "@context": "https://schema.org", "@type": "ContactPage", url: `${site.url}/contact`, name: "Contact VijStack", about: { "@id": `${site.url}/#business` } },
           breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]),
         ]}
       />
@@ -45,7 +45,7 @@ export default function ContactPage() {
                 const Icon = c.icon;
                 const inner = (
                   <>
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-sky-soft text-cobalt">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gold-soft text-gold-deep">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <span>
@@ -60,12 +60,12 @@ export default function ContactPage() {
                       <a
                         href={c.href}
                         {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})}
-                        className="flex items-center gap-4 rounded-2xl border border-line bg-white p-4 transition-colors hover:border-cobalt/40"
+                        className="flex items-center gap-4 rounded-2xl border-2 border-ink/10 bg-white p-4 transition-colors hover:border-ink"
                       >
                         {inner}
                       </a>
                     ) : (
-                      <div className="flex items-center gap-4 rounded-2xl border border-line bg-white p-4">{inner}</div>
+                      <div className="flex items-center gap-4 rounded-2xl border-2 border-ink/10 bg-white p-4">{inner}</div>
                     )}
                   </li>
                 );
@@ -75,13 +75,13 @@ export default function ContactPage() {
               href={site.googleReviews}
               target="_blank"
               rel="noopener"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 hover:decoration-cobalt"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 hover:decoration-gold"
             >
-              <Star className="h-4 w-4 fill-amber text-amber" aria-hidden /> See Vijstack on Google
+              <Star className="h-4 w-4 fill-gold text-gold" aria-hidden /> See VijStack on Google
             </a>
           </div>
 
-          <div className="stacked mb-5 ml-5 rounded-[28px] bg-white p-6 shadow-[0_30px_60px_-30px_rgba(15,20,66,0.25)] sm:p-10">
+          <div className="stacked mb-3 ml-3 rounded-[24px] border-2 border-ink bg-white p-5 sm:mb-5 sm:ml-5 sm:rounded-[28px] sm:p-10">
             <Suspense fallback={null}>
               <ContactForm />
             </Suspense>

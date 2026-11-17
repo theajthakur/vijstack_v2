@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Vijstack collects, uses and protects information shared through vijstack.com.",
+  description: "How VijStack collects, uses and protects information shared through vijstack.com.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <PageHeader title="Privacy policy" crumbs={[{ name: "Home", href: "/" }, { name: "Privacy policy", href: "/privacy" }]} />
       <Prose>
         <p>Last updated: November 2026</p>
-        <p>This policy explains what information Vijstack collects through this website and how it is used.</p>
+        <p>This policy explains what information VijStack collects through this website and how it is used.</p>
         <h2>Information you share</h2>
         <p>When you use the contact form, email or WhatsApp, you share details such as your name, email address, phone number and project information. This is used only to reply to you and to discuss, quote for and deliver your project.</p>
         <h2>Analytics</h2>

@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
+import { pauseScroll } from "./SmoothScroll";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -23,8 +24,10 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    pauseScroll(open);
     return () => {
       document.body.style.overflow = "";
+      pauseScroll(false);
     };
   }, [open]);
 
@@ -42,7 +45,7 @@ export default function Navbar() {
       <nav className="container-x flex h-[72px] items-center justify-between" aria-label="Main">
         <Logo onClick={() => setOpen(false)} />
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => (
             <li key={item.href}>
               <Link
@@ -55,16 +58,7 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <a
-              href={site.portfolio}
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-[15px] font-medium text-muted transition-colors hover:text-ink"
-            >
-              Portfolio <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-            </a>
-          </li>
+
         </ul>
 
         <div className="flex items-center gap-2">
@@ -74,7 +68,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -86,7 +80,7 @@ export default function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`overflow-hidden transition-[max-height] duration-500 ease-out md:hidden ${open ? "max-h-[100svh]" : "max-h-0"}`}
+        className={`overflow-hidden transition-[max-height] duration-500 ease-out lg:hidden ${open ? "max-h-[100svh]" : "max-h-0"}`}
       >
         <ul className="container-x flex flex-col gap-1 pb-8 pt-2">
           {nav.map((item) => (
@@ -96,11 +90,7 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <a href={site.portfolio} target="_blank" rel="noopener" className="flex items-center gap-2 border-b border-line py-4 font-display text-3xl font-semibold tracking-tight">
-              Portfolio <ArrowUpRight className="h-6 w-6" aria-hidden />
-            </a>
-          </li>
+
           <li className="pt-6">
             <Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary w-full">
               Start a project

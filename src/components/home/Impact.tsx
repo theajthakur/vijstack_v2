@@ -74,7 +74,7 @@ export default function Impact() {
 
   return (
     <section ref={root} id="results" className="relative overflow-hidden bg-ink py-24 text-white sm:py-32">
-      <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-cobalt/30 blur-[120px]" aria-hidden />
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-gold/15 blur-[120px]" aria-hidden />
       <div className="container-x relative">
         <h2 className="h-section max-w-3xl">Small studio, real track record</h2>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/65">
@@ -87,7 +87,7 @@ export default function Impact() {
               <dt className="sr-only">{s.label}</dt>
               <dd className="font-display text-6xl font-bold tracking-tight sm:text-7xl">
                 <span data-count={s.value}>{s.value}</span>
-                <span className="text-sky">{s.suffix}</span>
+                <span className="text-gold">{s.suffix}</span>
               </dd>
               <dd className="mt-2 text-white/65">{s.label}</dd>
             </div>
@@ -96,13 +96,13 @@ export default function Impact() {
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Donut: work mix */}
-          <figure className="rounded-3xl border border-white/10 bg-ink-2/60 p-7 sm:p-9">
+          <figure className="min-w-0 rounded-3xl border border-white/10 bg-ink-2/60 p-5 sm:p-9">
             <figcaption>
               <h3 className="text-2xl font-semibold tracking-tight">Where the work goes</h3>
               <p className="mt-1 text-white/60">Projects delivered by type</p>
             </figcaption>
             <div className="mt-8 flex flex-col items-center gap-8 sm:flex-row">
-              <svg data-donut viewBox="0 0 180 180" className="h-48 w-48 shrink-0" role="img" aria-label={`${MAINTENANCE}+ maintenance jobs and ${NEW_SITES}+ new custom websites`}>
+              <svg data-donut viewBox="0 0 180 180" className="h-40 w-40 shrink-0 sm:h-48 sm:w-48" role="img" aria-label={`${MAINTENANCE}+ maintenance jobs and ${NEW_SITES}+ new custom websites`}>
                 <circle cx="90" cy="90" r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="22" />
                 <circle
                   data-arc
@@ -110,7 +110,7 @@ export default function Impact() {
                   cy="90"
                   r={R}
                   fill="none"
-                  stroke="#4d94ea"
+                  stroke="#f0b429"
                   strokeWidth="22"
                   strokeDasharray={`${maintLen - gap} ${C}`}
                   transform="rotate(-90 90 90)"
@@ -121,7 +121,7 @@ export default function Impact() {
                   cy="90"
                   r={R}
                   fill="none"
-                  stroke="#ffb224"
+                  stroke="#ffffff"
                   strokeWidth="22"
                   strokeDasharray={`${newLen - gap} ${C}`}
                   strokeDashoffset={-maintLen}
@@ -138,14 +138,14 @@ export default function Impact() {
               </svg>
               <ul className="w-full space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-sky" />
+                  <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-gold" />
                   <div>
                     <p className="font-semibold">50+ maintenance jobs & fixes</p>
                     <p className="text-sm text-white/60">Bugs, speed, updates and new features on existing sites</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-amber" />
+                  <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-white" />
                   <div>
                     <p className="font-semibold">10+ new custom websites</p>
                     <p className="text-sm text-white/60">Designed and built from scratch</p>
@@ -156,20 +156,20 @@ export default function Impact() {
           </figure>
 
           {/* Bars: why speed matters */}
-          <figure className="rounded-3xl border border-white/10 bg-ink-2/60 p-7 sm:p-9">
+          <figure className="min-w-0 rounded-3xl border border-white/10 bg-ink-2/60 p-5 sm:p-9">
             <figcaption>
               <h3 className="text-2xl font-semibold tracking-tight">Why speed is built in</h3>
               <p className="mt-1 text-white/60">How much more likely mobile visitors are to leave as a page gets slower</p>
             </figcaption>
-            <div data-bars className="mt-8 flex h-56 items-end gap-3 sm:gap-5">
+            <div data-bars className="mt-8 flex h-56 items-end gap-2 sm:gap-5">
               {bounce.map((b) => (
                 <div key={b.t} className="flex h-full flex-1 flex-col justify-end">
-                  <span data-bar-label className="mb-2 text-center font-display text-xl font-bold sm:text-2xl">
+                  <span data-bar-label className="mb-2 text-center font-display text-lg font-semibold sm:text-2xl">
                     +{b.v}%
                   </span>
                   <div
                     data-bar-v
-                    className="w-full rounded-t-xl bg-linear-to-t from-cobalt to-sky"
+                    className="w-full rounded-t-xl bg-gold"
                     style={{ height: `${(b.v / 123) * 72}%` }}
                   />
                   <span className="mt-3 text-center text-xs text-white/60 sm:text-sm">{b.t}</span>

@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 type Status = { state: "idle" | "sending" | "sent" | "error"; message?: string };
 
 const field =
-  "w-full rounded-xl border border-line bg-paper px-4 py-3.5 text-ink placeholder:text-muted/60 transition-colors focus:border-cobalt focus:bg-white focus:outline-none";
+  "w-full rounded-xl border border-line bg-paper px-4 py-3.5 text-ink placeholder:text-muted/60 transition-colors focus:border-ink focus:bg-white focus:outline-none";
 
 export default function ContactForm() {
   const params = useSearchParams();
@@ -44,7 +44,7 @@ export default function ContactForm() {
         <CircleCheck className="h-12 w-12 text-emerald-600" aria-hidden />
         <h2 className="mt-6 text-3xl font-bold tracking-tight">Message sent</h2>
         <p className="mt-3 max-w-md text-lg text-muted">
-          Thanks for reaching out. Vijstack will reply to <span className="font-semibold text-ink">{sentTo}</span> soon.
+          Thanks for reaching out. VijStack will reply to <span className="font-semibold text-ink">{sentTo}</span> soon.
         </p>
         <button type="button" onClick={() => setStatus({ state: "idle" })} className="btn btn-ghost mt-8">
           Send another message

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import ClientsBand from "@/components/home/ClientsBand";
+import ClientLoop from "@/components/home/ClientLoop";
 import ServicesBento from "@/components/home/ServicesBento";
+import Statement from "@/components/home/Statement";
+import WorkStack from "@/components/home/WorkStack";
 import Impact from "@/components/home/Impact";
 import Process from "@/components/home/Process";
 import Testimonials from "@/components/home/Testimonials";
@@ -21,8 +23,10 @@ export default function Home() {
     <>
       <JsonLd data={[faqSchema(faqs), servicesListSchema(services)]} />
       <Hero />
-      <ClientsBand />
+      <ClientLoop />
       <ServicesBento />
+      <Statement />
+      <WorkStack />
       <Impact />
       <Process />
       <Testimonials />

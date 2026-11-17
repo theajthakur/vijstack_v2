@@ -1,5 +1,6 @@
 import { site, absoluteUrl } from "./site";
 import { services, type Service } from "./services";
+import type { Project } from "./work";
 
 const businessId = absoluteUrl("/#business");
 
@@ -23,7 +24,7 @@ export function businessSchema() {
     },
     geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
     areaServed: site.countries.map((c) => ({ "@type": "Country", name: c.name })),
-    sameAs: [site.googleReviews, site.portfolio],
+    sameAs: [site.googleReviews],
     knowsAbout: ["Web development", "Next.js", "React", "SEO", "E-commerce", "CMS development"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -57,7 +58,25 @@ export function websiteSchema() {
   };
 }
 
+export function offerFor(s: Service) {
+  if (!s.price) return undefined;
+  return {
+    "@type": "Offer",
+    url: absoluteUrl(`/services/${s.slug}`),
+    priceCurrency: "INR",
+    price: s.price.amount,
+    availability: "https://schema.org/InStock",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      priceCurrency: "INR",
+      minPrice: s.price.amount,
+      ...(s.price.unit ? { unitCode: "MON", referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" } } : {}),
+    },
+  };
+}
+
 export function serviceSchema(s: Service) {
+  const offer = offerFor(s);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -67,6 +86,32 @@ export function serviceSchema(s: Service) {
     url: absoluteUrl(`/services/${s.slug}`),
     provider: { "@id": businessId },
     areaServed: site.countries.map((c) => ({ "@type": "Country", name: c.name })),
+    ...(offer ? { offers: offer } : {}),
+  };
+}
+
+export function projectSchema(p: Project) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: p.name,
+    headline: `${p.name}: ${p.category}`,
+    description: p.summary,
+    url: absoluteUrl(`/work/${p.slug}`),
+    creator: { "@id": businessId },
+    genre: p.category,
+    keywords: p.stack.join(", "),
+    ...(p.country ? { locationCreated: { "@type": "Country", name: p.country } } : {}),
+    ...(p.logo ? { image: absoluteUrl(p.logo.src) } : {}),
+  };
+}
+
+export function itemListSchema(name: string, items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, url: absoluteUrl(it.path) })),
   };
 }
 

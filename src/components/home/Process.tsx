@@ -31,11 +31,11 @@ export default function Process() {
         gsap.utils.toArray<HTMLElement>("[data-step]").forEach((el) => {
           gsap.fromTo(
             el.querySelector("[data-dot]"),
-            { backgroundColor: "#ffffff", color: "#4a5175", borderColor: "#dde3f5" },
+            { backgroundColor: "#ffffff", color: "#55524c", borderColor: "#e4e2dd" },
             {
-              backgroundColor: "#2d4fe0",
-              color: "#ffffff",
-              borderColor: "#2d4fe0",
+              backgroundColor: "#f0b429",
+              color: "#000000",
+              borderColor: "#000000",
               duration: 0.3,
               scrollTrigger: { trigger: el, start: "top 65%", toggleActions: "play none none reverse" },
             }
@@ -47,7 +47,7 @@ export default function Process() {
   );
 
   return (
-    <section ref={root} id="process" className="py-24 sm:py-32">
+    <section ref={root} id="process" className="py-16 sm:py-24 lg:py-32">
       <div className="container-x grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <h2 className="h-section">From first call to live site in five steps</h2>
@@ -58,19 +58,19 @@ export default function Process() {
 
         <ol data-steps className="relative">
           <span className="absolute bottom-6 left-[23px] top-6 w-0.5 bg-line" aria-hidden />
-          <span data-progress className="absolute bottom-6 left-[23px] top-6 w-0.5 origin-top bg-cobalt" aria-hidden />
+          <span data-progress className="absolute bottom-6 left-[23px] top-6 w-0.5 origin-top bg-ink" aria-hidden />
           {steps.map((s, i) => (
             <li key={s.title} data-step className="relative flex gap-6 pb-12 last:pb-0">
               <span
                 data-dot
-                className="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-cobalt bg-cobalt font-display text-lg font-bold text-white"
+                className="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-ink bg-gold font-display text-xl font-semibold text-ink"
               >
                 {i + 1}
               </span>
               <div className="pt-2">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">{s.title}</h3>
                 <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted">{s.text}</p>
-                <p className="mt-4 inline-flex rounded-full bg-sky-soft px-3 py-1 text-sm font-medium text-cobalt">You get: {s.get}</p>
+                <p className="mt-4 inline-flex rounded-full bg-gold-soft px-3 py-1 text-sm font-medium text-gold-deep">You get: {s.get}</p>
               </div>
             </li>
           ))}

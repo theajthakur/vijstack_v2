@@ -1,7 +1,7 @@
 export const faqs = [
   {
     q: "How much does a website cost?",
-    a: "It depends on what the site needs to do. A landing page costs far less than an online store or a custom admin panel. After a short call you get a clear written quote, with no hidden extras.",
+    a: "It depends on what the site needs to do. Websites start from ₹14,999, apps from ₹19,999 and online stores from ₹79,000 (see the pricing page). After a short call you get a clear written quote, with no hidden extras.",
   },
   {
     q: "How long does it take to build a website?",
@@ -9,11 +9,11 @@ export const faqs = [
   },
   {
     q: "Do you work with clients outside India?",
-    a: "Yes. Vijstack has worked with clients in Pakistan, Germany, Canada, Spain, the UK and India. Projects run remotely with regular updates by email, calls or WhatsApp.",
+    a: "Yes. VijStack has worked with clients in Pakistan, Germany, Canada, Spain, the UK and India. Projects run remotely with regular updates by email, calls or WhatsApp.",
   },
   {
     q: "Can you fix or improve my existing website?",
-    a: "Yes. Vijstack has completed 50+ maintenance jobs and fixes, from broken forms and slow pages to new features on sites built by other developers.",
+    a: "Yes. VijStack has completed 50+ maintenance jobs and fixes, from broken forms and slow pages to new features on sites built by other developers.",
   },
   {
     q: "Will my website be SEO-friendly?",

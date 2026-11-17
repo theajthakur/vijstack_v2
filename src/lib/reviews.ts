@@ -1,31 +1,53 @@
-// Client testimonials shown on the site.
-// Replace or extend these with real reviews from your Google Business Profile.
-export type Review = { quote: string; name: string; role: string; country?: string };
+// Client reviews (from the VijStack v2 site). Keep these in sync with your Google Business Profile.
+export type Review = { quote: string; name: string; role: string; rating: number };
 
 export const reviews: Review[] = [
   {
-    quote: "Working with Vijstack transformed our business. Our website now attracts more customers, and the support after launch has been outstanding.",
-    name: "Anjali Sharma",
-    role: "Owner, Anjali's Boutique",
+    name: "Samuel Hufnagel",
+    role: "Fitness Platform Owner, Germany",
+    quote: "The VijStack team built our complete fitness platform including calorie tracking, diet suggestions, workout planning, trainer chat and scheduling. The system supports multiple roles like user, admin and super admin. Excellent work and very reliable communication.",
+    rating: 5,
   },
   {
-    quote: "They built us a custom e-commerce platform that's fast, secure and super easy to manage. We saw a sales boost within the first month.",
-    name: "Rahul Verma",
-    role: "Founder, TechGear Hub",
+    name: "M. Hanzla",
+    role: "Real Estate Platform",
+    quote: "VijStack developed several tools for our real estate platform including map based plot listings and a lead tracking system. The analytics dashboard and employee activity tracking have been very helpful for our operations.",
+    rating: 4.5,
   },
   {
-    quote: "Professional, transparent and always ready to help. The design is sleek, mobile-friendly and exactly what we envisioned.",
-    name: "Sanya Kapoor",
-    role: "Marketing Lead, GreenGrocer",
+    name: "Keshav",
+    role: "Founder, GroceryOnWheels",
+    quote: "We partnered with VijStack to build our grocery delivery platform. Their team handled the mobile app development in Flutter and backend integration smoothly.",
+    rating: 4,
   },
   {
-    quote: "From start to finish, the process was seamless. Everything from hosting to deployment was handled, hassle-free for us.",
-    name: "Amit Mehra",
-    role: "Director, EduPoint Academy",
+    name: "Sumo",
+    role: "Game Platform, Canada",
+    quote: "VijStack helped us build and launch a web based game similar to Pacman. The platform includes authentication, rewards, coupon codes and user accounts. Great technical support during launch.",
+    rating: 5,
   },
   {
-    quote: "We loved the approach. Affordable pricing, clear communication, and the final result was beyond our expectations.",
-    name: "Neha Bansal",
-    role: "Manager, Spice Villa Restaurant",
+    name: "Michael R.",
+    role: "SaaS Platform, via Upwork",
+    quote: "The VijStack team quickly understood our existing architecture and fixed several critical backend issues. Very professional and efficient to work with.",
+    rating: 4.5,
+  },
+  {
+    name: "Daniel K.",
+    role: "Fitness Software",
+    quote: "Great experience working with VijStack. They optimized our APIs and improved overall application performance.",
+    rating: 5,
+  },
+  {
+    name: "Sarah L.",
+    role: "Ecommerce Store",
+    quote: "We needed help stabilizing our production application and the VijStack team handled it perfectly. Bugs were resolved quickly and deployment was smooth.",
+    rating: 4,
+  },
+  {
+    name: "Ahmed T.",
+    role: "Startup Web Application",
+    quote: "VijStack joined our project during development and delivered clean and scalable solutions. Communication and technical expertise were excellent.",
+    rating: 5,
   },
 ];

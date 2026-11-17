@@ -1,10 +1,21 @@
 import {
   CodeXml, Search, ShoppingCart, Rocket, ShieldCheck, Magnet, Package, FilePen, LayoutDashboard, Wrench,
-  type LucideIcon,
+  Smartphone, RefreshCw, Globe, CreditCard, Server, LifeBuoy, type LucideIcon,
 } from "lucide-react";
+
+export type ServiceCategory = "build" | "launch" | "grow";
+
+export const categories: { id: ServiceCategory; title: string; intro: string }[] = [
+  { id: "build", title: "Build", intro: "Websites, apps, stores and the tools to run them." },
+  { id: "launch", title: "Integrate & launch", intro: "Domains, payments, cloud and security, set up properly." },
+  { id: "grow", title: "Grow & support", intro: "Get found, win leads and keep everything running." },
+];
 
 export type Service = {
   slug: string;
+  category: ServiceCategory;
+  /** Starting price shown on the pricing page, if published */
+  price?: { label: string; amount: number; unit?: "MONTH" };
   title: string;
   short: string;
   icon: LucideIcon;
@@ -20,14 +31,16 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "custom-websites",
+    category: "build",
+    price: { label: "₹14,999", amount: 14999 },
     title: "Custom Websites",
     short: "Hand-built business websites that load fast, rank well and turn visitors into enquiries.",
     icon: CodeXml,
     metaTitle: "Custom Website Development",
     metaDescription:
-      "Custom website development for startups and businesses. Fast, mobile-first, SEO-ready sites built with Next.js and React by Vijstack.",
+      "Custom website development for startups and businesses. Fast, mobile-first, SEO-ready sites built with Next.js and React by VijStack.",
     intro:
-      "Your website is often the first conversation a customer has with your business. Vijstack designs and builds it around your goals, your customers and your content, with no bloated themes slowing it down.",
+      "Your website is often the first conversation a customer has with your business. VijStack designs and builds it around your goals, your customers and your content, with no bloated themes slowing it down.",
     includes: [
       "Custom design shaped around your brand and audience",
       "Mobile-first, responsive layouts for every screen",
@@ -49,6 +62,8 @@ export const services: Service[] = [
   },
   {
     slug: "seo",
+    category: "grow",
+    price: { label: "₹5,000", amount: 5000 },
     title: "SEO",
     short: "Technical and on-page SEO that helps the right customers find you on Google.",
     icon: Search,
@@ -56,7 +71,7 @@ export const services: Service[] = [
     metaDescription:
       "Technical and on-page SEO services: site audits, speed fixes, structured data, keyword-focused pages and Google Search Console setup.",
     intro:
-      "Ranking starts with a site search engines can read easily. Vijstack fixes the technical foundations, structures your pages around what customers search for and sets up the tools to track progress.",
+      "Ranking starts with a site search engines can read easily. VijStack fixes the technical foundations, structures your pages around what customers search for and sets up the tools to track progress.",
     includes: [
       "Technical SEO audit with a prioritised fix list",
       "Page speed and Core Web Vitals improvements",
@@ -78,6 +93,8 @@ export const services: Service[] = [
   },
   {
     slug: "ecommerce",
+    category: "build",
+    price: { label: "₹79,000", amount: 79000 },
     title: "E-commerce Solutions",
     short: "Online stores with secure payments, easy product management and a smooth checkout.",
     icon: ShoppingCart,
@@ -85,7 +102,7 @@ export const services: Service[] = [
     metaDescription:
       "E-commerce website development with secure payment gateways, product and order management, and a fast, mobile-friendly checkout.",
     intro:
-      "Selling online should be simple for your customers and for you. Vijstack builds stores that are quick to browse, easy to check out from and easy to manage behind the scenes.",
+      "Selling online should be simple for your customers and for you. VijStack builds stores that are quick to browse, easy to check out from and easy to manage behind the scenes.",
     includes: [
       "Product catalogue with categories, filters and search",
       "Payment gateway integration (Razorpay, Stripe and more)",
@@ -107,6 +124,7 @@ export const services: Service[] = [
   },
   {
     slug: "startup-landing-pages",
+    category: "build",
     title: "Startup Landing Pages",
     short: "Fast, focused pages to launch a product, test an idea or run an ad campaign.",
     icon: Rocket,
@@ -114,7 +132,7 @@ export const services: Service[] = [
     metaDescription:
       "High-converting landing pages for startups and campaigns: fast to launch, mobile-first, with lead capture and analytics built in.",
     intro:
-      "A landing page has one job: get the visitor to act. Vijstack builds focused pages that explain your offer clearly and make signing up, booking or buying the obvious next step.",
+      "A landing page has one job: get the visitor to act. VijStack builds focused pages that explain your offer clearly and make signing up, booking or buying the obvious next step.",
     includes: [
       "Conversion-focused copy structure and layout",
       "Waitlist, signup or booking forms",
@@ -136,6 +154,7 @@ export const services: Service[] = [
   },
   {
     slug: "security-plans",
+    category: "launch",
     title: "Security Plans",
     short: "Hardening, backups, SSL and monitoring to keep your website safe and online.",
     icon: ShieldCheck,
@@ -143,7 +162,7 @@ export const services: Service[] = [
     metaDescription:
       "Website security plans: SSL, hardening, regular backups, malware checks, updates and uptime monitoring for business websites.",
     intro:
-      "A hacked or offline website costs you customers and trust. Vijstack security plans cover the essentials so problems are prevented, spotted early and fixed fast.",
+      "A hacked or offline website costs you customers and trust. VijStack security plans cover the essentials so problems are prevented, spotted early and fixed fast.",
     includes: [
       "SSL/HTTPS setup and security headers",
       "Regular automated backups",
@@ -165,6 +184,7 @@ export const services: Service[] = [
   },
   {
     slug: "lead-generation",
+    category: "grow",
     title: "Lead Generation",
     short: "Forms, funnels, WhatsApp and tracking that turn website visitors into enquiries.",
     icon: Magnet,
@@ -172,7 +192,7 @@ export const services: Service[] = [
     metaDescription:
       "Lead generation for business websites: smart forms, funnels, WhatsApp and call buttons, CRM integration and conversion tracking.",
     intro:
-      "Traffic only matters if it turns into conversations. Vijstack adds the forms, prompts and tracking that capture interested visitors and route them straight to you.",
+      "Traffic only matters if it turns into conversations. VijStack adds the forms, prompts and tracking that capture interested visitors and route them straight to you.",
     includes: [
       "Smart enquiry and quote forms",
       "Click-to-call and WhatsApp buttons",
@@ -194,6 +214,7 @@ export const services: Service[] = [
   },
   {
     slug: "startup-kits",
+    category: "grow",
     title: "Startup Kits",
     short: "Everything a new business needs to go live online, bundled and ready to launch.",
     icon: Package,
@@ -201,7 +222,7 @@ export const services: Service[] = [
     metaDescription:
       "Startup website kits: domain, hosting, website, business email, SEO basics and Google Business Profile setup in one package.",
     intro:
-      "Starting a business means a hundred decisions. A Vijstack startup kit handles the online ones in one go, so you launch with a complete, professional presence.",
+      "Starting a business means a hundred decisions. A VijStack startup kit handles the online ones in one go, so you launch with a complete, professional presence.",
     includes: [
       "Domain and hosting setup",
       "A fast, professional starter website",
@@ -223,6 +244,7 @@ export const services: Service[] = [
   },
   {
     slug: "custom-cms",
+    category: "build",
     title: "Custom CMS",
     short: "Update your own content easily, without touching a line of code.",
     icon: FilePen,
@@ -230,7 +252,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom CMS development so your team can edit pages, blogs, products and media easily, with roles, previews and fast, secure publishing.",
     intro:
-      "Your team shouldn't need a developer to change a price or publish a blog post. Vijstack builds content management that fits how you work, with only the fields you need.",
+      "Your team shouldn't need a developer to change a price or publish a blog post. VijStack builds content management that fits how you work, with only the fields you need.",
     includes: [
       "Editable pages, blogs and collections",
       "Image and file uploads with optimisation",
@@ -252,6 +274,7 @@ export const services: Service[] = [
   },
   {
     slug: "admin-panels",
+    category: "build",
     title: "Admin Panels",
     short: "Dashboards to manage users, orders, bookings and data in one place.",
     icon: LayoutDashboard,
@@ -259,7 +282,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom admin panels and dashboards to manage users, orders, bookings, attendance and business data securely in one place.",
     intro:
-      "Spreadsheets and registers only go so far. Vijstack builds secure admin panels that bring your operations into one place, from orders and bookings to attendance and reports.",
+      "Spreadsheets and registers only go so far. VijStack builds secure admin panels that bring your operations into one place, from orders and bookings to attendance and reports.",
     includes: [
       "Secure login with roles and permissions",
       "Manage users, orders, bookings or records",
@@ -281,6 +304,8 @@ export const services: Service[] = [
   },
   {
     slug: "maintenance",
+    category: "grow",
+    price: { label: "₹10,000/month", amount: 10000, unit: "MONTH" },
     title: "Maintenance & Fixes",
     short: "Bug fixes, updates, speed boosts and new features for websites you already have.",
     icon: Wrench,
@@ -288,7 +313,7 @@ export const services: Service[] = [
     metaDescription:
       "Website maintenance and bug fixing: broken pages, speed issues, updates, new features and ongoing support for existing websites.",
     intro:
-      "Already have a website that's slow, broken or out of date? With 50+ maintenance jobs and fixes delivered, Vijstack can step in, sort out the problems and keep things running.",
+      "Already have a website that's slow, broken or out of date? With 50+ maintenance jobs and fixes delivered, VijStack can step in, sort out the problems and keep things running.",
     includes: [
       "Bug and layout fixes",
       "Speed and performance improvements",
@@ -308,6 +333,190 @@ export const services: Service[] = [
       { q: "Do you offer one-off fixes?", a: "Yes. You can book a single fix or an ongoing monthly care plan." },
     ],
   },
+  {
+    slug: "app-development",
+    category: "build",
+    price: { label: "₹19,999", amount: 19999 },
+    title: "App Development",
+    short: "Cross-platform mobile apps in Flutter, plus SaaS products and MVPs with scalable backends.",
+    icon: Smartphone,
+    metaTitle: "Mobile App & SaaS Development (Flutter)",
+    metaDescription:
+      "Flutter mobile app development for Android and iOS, plus SaaS platforms and MVPs with secure, scalable backends, by VijStack.",
+    intro:
+      "One codebase, two app stores. VijStack builds Flutter apps for Android and iOS, and SaaS products with the dashboards, APIs and backends behind them.",
+    includes: [
+      "Flutter apps for Android and iOS from one codebase",
+      "SaaS platforms and MVPs with user roles and billing",
+      "REST APIs and backends with Node.js or Firebase",
+      "Push notifications, maps, payments and chat",
+      "Admin dashboards to manage users and content",
+      "Play Store and App Store submission",
+    ],
+    outcomes: [
+      { title: "Reach both platforms", text: "Ship to Android and iOS without paying for two separate apps." },
+      { title: "Launch an MVP fast", text: "Test your idea with real users before investing more." },
+      { title: "Built to scale", text: "A clean backend that grows with your users." },
+    ],
+    idealFor: "Startups and businesses that need a mobile app or a SaaS product.",
+    faqs: [
+      { q: "Why Flutter?", a: "Flutter builds native-quality Android and iOS apps from a single codebase, which keeps cost and maintenance down." },
+      { q: "Can you build the backend too?", a: "Yes. APIs, databases, admin panels and cloud hosting are all part of the build." },
+    ],
+  },
+  {
+    slug: "website-revamp",
+    category: "build",
+    price: { label: "₹14,999", amount: 14999 },
+    title: "Website Revamps",
+    short: "A full visual and technical overhaul that turns an outdated site into a modern, fast one.",
+    icon: RefreshCw,
+    metaTitle: "Website Redesign & Revamp Services",
+    metaDescription:
+      "Website redesign and revamp: modern design, faster loading, better SEO and mobile experience, without losing your search rankings.",
+    intro:
+      "If your website looks dated, loads slowly or doesn't work on phones, it's costing you customers. A revamp fixes the design and the code underneath, while protecting the search rankings you already have.",
+    includes: [
+      "Modern redesign that matches your brand",
+      "Rebuild on a fast, modern framework",
+      "Mobile-first layouts for every screen",
+      "Redirects that keep your existing Google rankings",
+      "Content cleanup and clearer calls to action",
+      "Speed, accessibility and SEO improvements",
+    ],
+    outcomes: [
+      { title: "Look current", text: "A fresh design that builds trust with today's customers." },
+      { title: "Keep your rankings", text: "Careful redirects protect the traffic you've earned." },
+      { title: "Convert better", text: "Clearer pages turn more visitors into enquiries." },
+    ],
+    idealFor: "Businesses whose website is more than a few years old.",
+    faqs: [
+      { q: "Will I lose my Google rankings?", a: "Not if it's done right. Every old URL is mapped to its new page with permanent redirects before launch." },
+      { q: "Can you keep my existing content?", a: "Yes. Existing content is moved over and improved where it helps." },
+    ],
+  },
+  {
+    slug: "domain-email-integration",
+    category: "launch",
+    title: "Domain & Email Integration",
+    short: "Domain setup, DNS and Cloudflare, SSL, and professional email on your own domain.",
+    icon: Globe,
+    metaTitle: "Domain, DNS & Business Email Setup",
+    metaDescription:
+      "Domain purchase and transfer, DNS and Cloudflare setup, SSL certificates, and business email on your domain with Google Workspace or Zoho.",
+    intro:
+      "Your domain and email are the foundation of your online presence. VijStack sets them up correctly, so your site is secure, your emails land in inboxes and everything is in your name.",
+    includes: [
+      "Domain purchase or transfer, registered in your name",
+      "DNS setup and Cloudflare protection",
+      "SSL certificates and HTTPS everywhere",
+      "Business email with Google Workspace or Zoho Mail",
+      "SPF, DKIM and DMARC so emails reach inboxes",
+      "Connecting your domain to your website or app",
+    ],
+    outcomes: [
+      { title: "Look professional", text: "you@yourbusiness.com instead of a free email address." },
+      { title: "Reach the inbox", text: "Correct email authentication keeps you out of spam." },
+      { title: "Stay in control", text: "Everything is registered to you, with clear access." },
+    ],
+    idealFor: "New businesses and anyone moving domains, hosting or email.",
+    faqs: [
+      { q: "Can you move my existing domain?", a: "Yes. Domains can be transferred or pointed to a new host with little or no downtime." },
+      { q: "Why do my emails go to spam?", a: "Usually because SPF, DKIM or DMARC records are missing or wrong. Setting them up properly fixes most cases." },
+    ],
+  },
+  {
+    slug: "payment-gateway-integration",
+    category: "launch",
+    title: "Payment Gateway Integration",
+    short: "Secure checkout with Razorpay, Stripe or PayPal, including UPI, subscriptions and webhooks.",
+    icon: CreditCard,
+    metaTitle: "Payment Gateway Integration (Razorpay, Stripe, PayPal)",
+    metaDescription:
+      "Payment gateway integration for websites and apps: Razorpay, Stripe and PayPal, with UPI, cards, subscriptions, refunds and webhooks.",
+    intro:
+      "Getting paid online should be simple for your customers and reliable for you. VijStack integrates payment gateways into websites, stores and apps, with every edge case handled.",
+    includes: [
+      "Razorpay, Stripe and PayPal integration",
+      "Cards, UPI, net banking and wallets",
+      "Subscriptions and recurring billing",
+      "Refunds, invoices and payment receipts",
+      "Webhooks that update orders automatically",
+      "Test-mode setup and secure go-live",
+    ],
+    outcomes: [
+      { title: "Smooth checkout", text: "Fewer steps and the payment methods customers prefer." },
+      { title: "Reliable records", text: "Orders update automatically when payments succeed or fail." },
+      { title: "Secure by design", text: "Card data stays with the gateway, never on your server." },
+    ],
+    idealFor: "Online stores, SaaS products, booking sites and service businesses.",
+    faqs: [
+      { q: "Which gateway should I use?", a: "Razorpay suits most Indian businesses; Stripe and PayPal suit international customers. You'll get a recommendation for your case." },
+      { q: "Can you add payments to my existing site?", a: "Yes. Payments can be added to most existing websites and apps." },
+    ],
+  },
+  {
+    slug: "devops-cloud-deployment",
+    category: "launch",
+    price: { label: "₹5,000", amount: 5000 },
+    title: "DevOps & Cloud Deployment",
+    short: "CI/CD pipelines, cloud hosting and scaling, so every update ships safely with zero downtime.",
+    icon: Server,
+    metaTitle: "DevOps, CI/CD & Cloud Deployment",
+    metaDescription:
+      "DevOps and cloud deployment: CI/CD pipelines, Docker, AWS, Google Cloud and Vercel hosting, monitoring and scaling for web apps.",
+    intro:
+      "Great code still needs a reliable way to reach your users. VijStack sets up hosting, deployments and monitoring so releases are routine and downtime is rare.",
+    includes: [
+      "Hosting on AWS, Google Cloud or Vercel",
+      "CI/CD pipelines with automated builds and checks",
+      "Docker containers for consistent environments",
+      "Zero-downtime deployments and rollbacks",
+      "Monitoring, logs and uptime alerts",
+      "Scaling and cost optimisation",
+    ],
+    outcomes: [
+      { title: "Ship with confidence", text: "Automated pipelines catch problems before users see them." },
+      { title: "Stay online", text: "Monitoring and rollbacks keep downtime to a minimum." },
+      { title: "Pay for what you use", text: "Right-sized infrastructure keeps cloud bills sensible." },
+    ],
+    idealFor: "Growing web apps, SaaS products and teams shipping often.",
+    faqs: [
+      { q: "Which cloud do you recommend?", a: "Vercel suits most Next.js sites; AWS or Google Cloud suit apps that need more control. The choice depends on your app and budget." },
+      { q: "Can you move my app to a new host?", a: "Yes. Migrations are planned to avoid downtime and data loss." },
+    ],
+  },
+  {
+    slug: "technical-support",
+    category: "grow",
+    price: { label: "₹5,000", amount: 5000 },
+    title: "Technical Support",
+    short: "On-demand expert help with servers, deployments, bugs and complex codebases.",
+    icon: LifeBuoy,
+    metaTitle: "Technical Support for Websites & Apps",
+    metaDescription:
+      "On-demand technical support for websites and web apps: debugging, server issues, deployments, performance and code reviews.",
+    intro:
+      "Stuck on a bug, a failing deployment or a slow server? VijStack steps into your codebase, finds the cause and fixes it, whoever built the project.",
+    includes: [
+      "Debugging frontend and backend issues",
+      "Server, hosting and deployment problems",
+      "API and database performance fixes",
+      "Code reviews and architecture advice",
+      "Help for your in-house developers",
+      "Clear notes on what was changed and why",
+    ],
+    outcomes: [
+      { title: "Unblocked fast", text: "Get past the problem that's holding your project up." },
+      { title: "Root causes fixed", text: "Problems are solved properly, not patched over." },
+      { title: "Know what happened", text: "Clear explanations so your team can maintain it." },
+    ],
+    idealFor: "Teams and founders with an existing product that needs expert help.",
+    faqs: [
+      { q: "Do you work on code someone else wrote?", a: "Yes. Much of this work is on existing codebases built by other developers." },
+      { q: "Can you help urgently?", a: "Urgent issues are prioritised. Get in touch by WhatsApp or phone for the fastest response." },
+    ],
+  },
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
@@ -315,3 +524,5 @@ export const getService = (slug: string) => services.find((s) => s.slug === slug
 /** Lowercase a title for use mid-sentence, keeping acronyms like SEO and CMS. */
 export const inSentence = (t: string) =>
   t.split(" ").map((w) => (w === w.toUpperCase() && w.length > 1 ? w : w.toLowerCase())).join(" ");
+
+export const servicesIn = (c: ServiceCategory) => services.filter((s) => s.category === c);

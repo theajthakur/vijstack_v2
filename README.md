@@ -1,6 +1,6 @@
 # Vijstack website
 
-The new vijstack.com, built with Next.js 16 (App Router), Tailwind CSS 4, GSAP and Lucide icons.
+The VijStack website, built with Next.js 16 (App Router), Tailwind CSS 4, GSAP and Lucide icons. Brand: black and gold, Newsreader (headings) and Instrument Sans (body), with the stacked-frame motif from the VijStack logo.
 
 ## Getting started
 
@@ -33,8 +33,13 @@ Everything you'd normally change lives in `src/lib/`:
 
 - `site.ts`: contact details, countries, stats, links
 - `services.ts`: all 10 services (each gets its own page at `/services/<slug>`)
-- `reviews.ts`: testimonials (**replace with your real Google reviews**)
+- `reviews.ts`: client reviews
+- `work.ts`: portfolio projects shown in "Selected work" (logos in `public/work/`)
 - `faqs.ts`: homepage FAQ
+
+Pages: home, `/services` (+16 service pages), `/work` (+6 case studies), `/pricing`, `/about`, `/contact`, privacy, terms, plus `/llms.txt` for AI search tools.
+
+Animation: GSAP + ScrollTrigger with Lenis smooth scrolling (driven by the GSAP ticker). Everything respects "reduce motion". Components in `src/components/reactbits/` are adapted from [React Bits](https://reactbits.dev) (MIT + Commons Clause).
 
 ## SEO built in
 

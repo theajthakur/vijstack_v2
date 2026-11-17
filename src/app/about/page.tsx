@@ -9,9 +9,9 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Vijstack: Web Developer in Greater Noida, India",
+  title: "About VijStack: Web Developer in Greater Noida, India",
   description:
-    "Vijstack is a web development studio in Greater Noida, India, building custom websites, e-commerce and admin panels for 20+ clients across 5+ countries.",
+    "VijStack is a web development studio in Greater Noida, India, building custom websites, e-commerce and admin panels for 20+ clients across 5+ countries.",
   alternates: { canonical: "/about" },
   openGraph: { url: "/about" },
 };
@@ -28,13 +28,13 @@ export default function AboutPage() {
     <>
       <JsonLd
         data={[
-          { "@context": "https://schema.org", "@type": "AboutPage", url: `${site.url}/about`, name: "About Vijstack", about: { "@id": `${site.url}/#business` } },
+          { "@context": "https://schema.org", "@type": "AboutPage", url: `${site.url}/about`, name: "About VijStack", about: { "@id": `${site.url}/#business` } },
           breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
         ]}
       />
       <PageHeader
         title="Your vision, built in code"
-        intro="Vijstack helps startups and businesses build a strong online presence with modern, fast and secure websites."
+        intro="VijStack helps startups and businesses build a strong online presence with modern, fast and secure websites."
         crumbs={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]}
       />
 
@@ -42,13 +42,13 @@ export default function AboutPage() {
         <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_0.8fr]">
           <div className="space-y-6 text-lg leading-relaxed text-muted">
             <p>
-              <strong className="font-semibold text-ink">Vijstack</strong> is a web development studio based in Greater Noida, India.
+              <strong className="font-semibold text-ink">VijStack</strong> is a web development studio based in Greater Noida, India.
               It started with a simple observation: plenty of good businesses, from hardware shops and schools to restaurants and
               grocery stores, were invisible online and losing customers to competitors who weren&apos;t.
             </p>
             <p>
               Today people trust what they find online. A proper domain and a professional website build credibility before a
-              customer ever calls you. That&apos;s what Vijstack builds: websites, online stores, CMS and admin panels that look
+              customer ever calls you. That&apos;s what VijStack builds: websites, online stores, CMS and admin panels that look
               professional, load fast, rank well and turn visitors into customers.
             </p>
             <p>
@@ -57,14 +57,14 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="stacked mx-auto mb-5 ml-5 grid aspect-square w-full max-w-sm place-items-center rounded-[32px] bg-white">
-            <Image src="/logo.png" alt="Vijstack logo" width={280} height={280} className="h-auto w-3/5" />
+            <Image src="/logo.png" alt="VijStack logo" width={280} height={280} className="h-auto w-3/5" />
           </div>
         </div>
       </section>
 
       <ClientsBand />
 
-      <section className="py-24 sm:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="container-x">
           <h2 className="h-section max-w-2xl">What you can count on</h2>
           <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
@@ -72,7 +72,7 @@ export default function AboutPage() {
               const Icon = v.icon;
               return (
                 <div key={v.title} className="flex gap-5">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-cobalt text-white">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gold text-ink">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <div>

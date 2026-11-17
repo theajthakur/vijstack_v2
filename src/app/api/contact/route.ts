@@ -61,7 +61,7 @@ export async function POST(req: Request) {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM_EMAIL || "Vijstack Website <onboarding@resend.dev>",
+      from: process.env.CONTACT_FROM_EMAIL || "VijStack Website <onboarding@resend.dev>",
       to: [process.env.CONTACT_TO_EMAIL || "vijstack@gmail.com"],
       reply_to: email,
       subject: `New enquiry from ${name}${service ? ` (${service})` : ""}`,
@@ -71,7 +71,7 @@ export async function POST(req: Request) {
 
   if (!res.ok) {
     console.error("[contact] Resend error", res.status, await res.text().catch(() => ""));
-    return NextResponse.json({ error: "Your message couldn't be delivered." }, { status: 502 });
+    return NextResponse.json({ error: "Your message couldn't be delivered." }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });

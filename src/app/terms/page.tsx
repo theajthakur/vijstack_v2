@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms for using vijstack.com and working with Vijstack.",
+  description: "Terms for using vijstack.com and working with VijStack.",
   alternates: { canonical: "/terms" },
 };
 
@@ -16,7 +16,7 @@ export default function TermsPage() {
       <Prose>
         <p>Last updated: November 2026</p>
         <h2>Using this website</h2>
-        <p>The content on this website is for general information about Vijstack&apos;s services. It may change without notice.</p>
+        <p>The content on this website is for general information about VijStack&apos;s services. It may change without notice.</p>
         <h2>Projects</h2>
         <p>Every project is covered by its own written quote or agreement, which sets out the scope, timeline, payment terms and ownership. Where that agreement differs from these terms, the agreement applies.</p>
         <h2>Ownership</h2>
